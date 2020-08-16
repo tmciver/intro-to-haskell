@@ -1,0 +1,35 @@
+#+TITLE: Introduction to Haskell
+#+REVEAL_THEME: night
+#+OPTIONS: toc:1, num:nil, f:t
+#+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js@3.8.0
+
+* What is Haskell?
+
+** Haskell is programming language that
+#+ATTR_REVEAL: :frag (roll-in)
+- is pure
+- is lazy
+- has immutable data
+
+** Haskell is Pure
+#+ATTR_REVEAL: :frag (roll-in)
+- This means that functions _always_ return the same output for a given set of inputs, and
+- they have no side effects
+
+** Haskell is lazy
+#+ATTR_REVEAL: :frag (roll-in)
+- data is only created as it is needed
+
+#+ATTR_REVEAL: :frag roll-in
+#+begin_src haskell
+-- an infinite list
+xs = [1..]
+
+-- take the first 10
+take 10 xs
+#+end_src
+
+* Why Haskell is Cool
+- A new way to think about programming
+- expressive, concise and clear
+- beautiful

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Introduction to Haskell</title>
+<meta name="author" content="(Tim McIver)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.8.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.8.0/css/theme/night.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdn.jsdelivr.net/npm/reveal.js@3.8.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Introduction to Haskell</h1><h2 class="author">Tim McIver</h2><p class="date">Created: 2020-08-15 Sat 22:33</p>
+</section>
+<section id="table-of-contents">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#/slide-orgce32c22">What is Haskell?</a></li>
+<li><a href="#/slide-orgf7d7048">Why Haskell is Cool</a></li>
+</ul>
+</div>
+</div>
+</section>
+
+<section>
+<section id="slide-sec-">
+<h2 id="orgce32c22">What is Haskell?</h2>
+<div class="outline-text-2" id="text-orgce32c22">
+</div>
+</section>
+<section id="slide-sec-">
+<h3 id="org3913d8a">Haskell is programming language that</h3>
+<ul>
+<li class="fragment roll-in">is pure</li>
+<li class="fragment roll-in">is lazy</li>
+<li class="fragment roll-in">has immutable data</li>
+
+</ul>
+
+</section>
+<section id="slide-sec-">
+<h3 id="org3bb23d8">Haskell is Pure</h3>
+<ul>
+<li class="fragment roll-in">This means that functions <span class="underline">always</span> return the same output for a given set of inputs, and</li>
+<li class="fragment roll-in">they have no side effects</li>
+
+</ul>
+
+</section>
+<section id="slide-sec-">
+<h3 id="org41790a8">Haskell is lazy</h3>
+<ul>
+<li class="fragment roll-in">data is only created as it is needed</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre  class="fragment roll-in"><code trim><span style="color: #73d216;">-- </span><span style="color: #73d216;">an infinite list</span>
+<span style="color: #fce94f;">xs</span> <span style="color: #fcaf3e;">=</span> [1<span style="color: #fcaf3e;">..</span>]
+
+<span style="color: #73d216;">-- </span><span style="color: #73d216;">take the first 10</span>
+<span style="color: #fce94f;">take</span> 10 xs
+</code></pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-sec-">
+<h2 id="orgf7d7048">Why Haskell is Cool</h2>
+<ul>
+<li>A new way to think about programming</li>
+<li>expressive, concise and clear</li>
+<li>beautiful</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@3.8.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.8.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.8.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.8.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.8.0/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.8.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>
