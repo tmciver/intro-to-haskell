@@ -5,7 +5,7 @@
 
 * What is Haskell?
 
-** Haskell is programming language that
+** Haskell is a programming language that
 #+ATTR_REVEAL: :frag (roll-in)
 - is pure
 - is lazy
@@ -21,13 +21,16 @@
 - data is only created as it is needed
 
 #+ATTR_REVEAL: :frag roll-in
-#+begin_src haskell
+#+begin_src haskell :results pp
 -- an infinite list
 xs = [1..]
 
 -- take the first 10
 take 10 xs
 #+end_src
+
+#+results: 
+| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
 
 * Why Haskell is Cool
 - A new way to think about programming
