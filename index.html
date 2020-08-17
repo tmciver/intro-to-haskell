@@ -26,15 +26,15 @@
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h1 class="title">Introduction to Haskell</h1><h2 class="author">Tim McIver</h2><p class="date">Created: 2020-08-16 Sun 18:04</p>
+<section id="sec-title-slide"><h1 class="title">Introduction to Haskell</h1><h2 class="author">Tim McIver</h2><p class="date">Created: 2020-08-16 Sun 23:37</p>
 </section>
 <section id="table-of-contents">
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#/slide-org04c7da4">What is Haskell?</a></li>
-<li><a href="#/slide-org058dc66">Why Haskell is Cool</a></li>
+<li><a href="#/slide-org5fe937e">What is Haskell?</a></li>
+<li><a href="#/slide-org8b8ca63">Why Haskell is Cool</a></li>
 </ul>
 </div>
 </div>
@@ -42,22 +42,27 @@
 
 <section>
 <section id="slide-sec-">
-<h2 id="org04c7da4">What is Haskell?</h2>
-<div class="outline-text-2" id="text-org04c7da4">
+<h2 id="org5fe937e">What is Haskell?</h2>
+<div class="outline-text-2" id="text-org5fe937e">
 </div>
 </section>
 <section id="slide-sec-">
-<h3 id="org48400fc">Haskell is a programming language that</h3>
+<h3 id="org176f49f">Haskell is a programming language that</h3>
 <ul>
 <li class="fragment roll-in">is pure</li>
 <li class="fragment roll-in">is lazy</li>
 <li class="fragment roll-in">has immutable data</li>
+<li class="fragment roll-in">is used to build programs by composing functions
+<ul>
+<li>show how it's similar to unix pipes as in <a href="https://www.youtube.com/watch?v=b9FagOVqxmI">this video</a>.</li>
+
+</ul></li>
 
 </ul>
 
 </section>
 <section id="slide-sec-">
-<h3 id="orgb9c07e4">Haskell is Pure</h3>
+<h3 id="orgc0c2771">Haskell is Pure</h3>
 <ul>
 <li class="fragment roll-in">This means that functions <span class="underline">always</span> return the same output for a given set of inputs, and</li>
 <li class="fragment roll-in">they have no side effects</li>
@@ -66,12 +71,15 @@
 
 </section>
 <section id="slide-sec-">
-<h3 id="orge0840bc">Haskell is lazy</h3>
+<h3 id="org0d93719">Haskell is lazy</h3>
 <ul>
 <li class="fragment roll-in">data is only created as it is needed</li>
 
 </ul>
 
+</section>
+<section id="slide-sec-">
+<h4 id="orga3ee7d0"><span class="todo TODO">TODO</span> perhaps show definition of Fibonacci sequence as in <a href="https://www.youtube.com/watch?v=apBWkBDVlow">this video</a>.</h4>
 <div class="org-src-container">
 
 <pre  class="fragment roll-in"><code trim><span style="color: #73d216;">-- </span><span style="color: #73d216;">an infinite list</span>
@@ -86,7 +94,7 @@
 </section>
 <section>
 <section id="slide-sec-">
-<h2 id="org058dc66">Why Haskell is Cool</h2>
+<h2 id="org8b8ca63">Why Haskell is Cool</h2>
 <ul>
 <li>A new way to think about programming</li>
 <li>expressive, concise and clear</li>
