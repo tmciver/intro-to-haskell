@@ -23,9 +23,9 @@
 ** In Haskell
 #+ATTR_REVEAL: :frag roll-in
 #+begin_src haskell
-main = readFile "quotes.txt" >>= print . process
+main = readFile "gump-quote.txt" >>= putStr . process
 
-process s = (toUpper (unlines (map reverse (sort (lines s)))))
+process s = (map toUpper (unlines (map reverse (sort (lines s)))))
 #+end_src
 
 ** Function Composition
@@ -38,7 +38,7 @@ f (g x) = (f . g) x
 #+begin_block
 So
 #+begin_src haskell
-process s = (toUpper (unlines (map reverse (sort (lines s)))))
+process s = (map toUpper (unlines (map reverse (sort (lines s)))))
 #+end_src
 #+end_block
 
@@ -46,7 +46,7 @@ process s = (toUpper (unlines (map reverse (sort (lines s)))))
 #+begin_block
 becomes
 #+begin_src haskell
-process s = (toUpper . unlines . map reverse . sort . lines) s
+process s = (map toUpper . unlines . map reverse . sort . lines) s
 #+end_src
 #+end_block
 
@@ -54,7 +54,7 @@ process s = (toUpper . unlines . map reverse . sort . lines) s
 #+begin_block
 which becomes
 #+begin_src haskell
-process = toUpper . unlines . map reverse . sort . lines
+process = map toUpper . unlines . map reverse . sort . lines
 #+end_src
 #+end_block
 

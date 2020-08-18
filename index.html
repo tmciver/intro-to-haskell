@@ -31,12 +31,12 @@
 
 <section>
 <section id="slide-sec-">
-<h2 id="orgcb7be84">What is Haskell?</h2>
-<div class="outline-text-2" id="text-orgcb7be84">
+<h2 id="orgd19ad8a">What is Haskell?</h2>
+<div class="outline-text-2" id="text-orgd19ad8a">
 </div>
 </section>
 <section id="slide-sec-">
-<h3 id="org3ee8a2e">Haskell is a programming language that</h3>
+<h3 id="orgf5db7ab">Haskell is a programming language that</h3>
 <ul>
 <li class="fragment roll-in">is pure</li>
 <li class="fragment roll-in">is lazy</li>
@@ -51,7 +51,7 @@
 
 </section>
 <section id="slide-sec-">
-<h3 id="org1203f6f">Something a Little More Familiar</h3>
+<h3 id="org3c14e64">Something a Little More Familiar</h3>
 <div class="org-src-container">
 
 <pre  class="src src-bash"><code trim>cat quote.txt | sort | rev | tr <span style="color: #e9b96e;">'[:lower:]'</span> <span style="color: #e9b96e;">'[:upper:]'</span>
@@ -60,23 +60,23 @@
 
 </section>
 <section id="slide-sec-">
-<h3 id="org46aa6fb">In Haskell</h3>
+<h3 id="org1358cda">In Haskell</h3>
 <div class="org-src-container">
 
-<pre  class="fragment roll-in"><code trim><span style="color: #fce94f;">main</span> <span style="color: #fcaf3e;">=</span> readFile <span style="color: #e9b96e;">"quotes.txt"</span> <span style="color: #fcaf3e;">&gt;&gt;=</span> print <span style="color: #fcaf3e;">.</span> process
+<pre  class="fragment roll-in"><code trim><span style="color: #fce94f;">main</span> <span style="color: #fcaf3e;">=</span> readFile <span style="color: #e9b96e;">"gump-quote.txt"</span> <span style="color: #fcaf3e;">&gt;&gt;=</span> putStr <span style="color: #fcaf3e;">.</span> process
 
-<span style="color: #fce94f;">process</span> s <span style="color: #fcaf3e;">=</span> (toUpper (unlines (map reverse (sort (lines s)))))
+<span style="color: #fce94f;">process</span> s <span style="color: #fcaf3e;">=</span> (map toUpper (unlines (map reverse (sort (lines s)))))
 </code></pre>
 </div>
 
 </section>
 <section id="slide-sec-">
-<h3 id="org5f9d921">Function Composition</h3>
+<h3 id="orgcec139f">Function Composition</h3>
 <p>
 Compose two functions using '.'
 </p>
 <pre  class="example">
-(f . g) x = f (g x)
+f (g x) = (f . g) x
 </pre>
 
 <div class="fragment roll-in block">
@@ -85,7 +85,7 @@ So
 </p>
 <div class="org-src-container">
 
-<pre  class="src src-haskell"><code trim><span style="color: #fce94f;">process</span> s <span style="color: #fcaf3e;">=</span> (toUpper (unlines (map reverse (sort (lines s)))))
+<pre  class="src src-haskell"><code trim><span style="color: #fce94f;">process</span> s <span style="color: #fcaf3e;">=</span> (map toUpper (unlines (map reverse (sort (lines s)))))
 </code></pre>
 </div>
 
@@ -97,7 +97,7 @@ becomes
 </p>
 <div class="org-src-container">
 
-<pre  class="src src-haskell"><code trim><span style="color: #fce94f;">process</span> s <span style="color: #fcaf3e;">=</span> (toUpper <span style="color: #fcaf3e;">.</span> unlines <span style="color: #fcaf3e;">.</span> map reverse <span style="color: #fcaf3e;">.</span> sort <span style="color: #fcaf3e;">.</span> lines) s
+<pre  class="src src-haskell"><code trim><span style="color: #fce94f;">process</span> s <span style="color: #fcaf3e;">=</span> (map toUpper <span style="color: #fcaf3e;">.</span> unlines <span style="color: #fcaf3e;">.</span> map reverse <span style="color: #fcaf3e;">.</span> sort <span style="color: #fcaf3e;">.</span> lines) s
 </code></pre>
 </div>
 
@@ -109,7 +109,7 @@ which becomes
 </p>
 <div class="org-src-container">
 
-<pre  class="src src-haskell"><code trim><span style="color: #fce94f;">process</span> <span style="color: #fcaf3e;">=</span> toUpper <span style="color: #fcaf3e;">.</span> unlines <span style="color: #fcaf3e;">.</span> map reverse <span style="color: #fcaf3e;">.</span> sort <span style="color: #fcaf3e;">.</span> lines
+<pre  class="src src-haskell"><code trim><span style="color: #fce94f;">process</span> <span style="color: #fcaf3e;">=</span> map toUpper <span style="color: #fcaf3e;">.</span> unlines <span style="color: #fcaf3e;">.</span> map reverse <span style="color: #fcaf3e;">.</span> sort <span style="color: #fcaf3e;">.</span> lines
 </code></pre>
 </div>
 
@@ -117,7 +117,7 @@ which becomes
 
 </section>
 <section id="slide-sec-">
-<h3 id="org3320e05">Haskell is Pure</h3>
+<h3 id="orgf3cd92d">Haskell is Pure</h3>
 <ul>
 <li class="fragment roll-in">This means that functions <span class="underline">always</span> return the same output for a given set of inputs, and</li>
 <li class="fragment roll-in">they have no side effects</li>
@@ -126,7 +126,7 @@ which becomes
 
 </section>
 <section id="slide-sec-">
-<h3 id="org9baf4b6">Haskell is lazy</h3>
+<h3 id="org6821749">Haskell is lazy</h3>
 <ul>
 <li class="fragment roll-in">data is only created as it is needed</li>
 
@@ -134,7 +134,7 @@ which becomes
 
 </section>
 <section id="slide-sec-">
-<h4 id="orgef5bb59"><span class="todo TODO">TODO</span> perhaps show definition of Fibonacci sequence as in <a href="https://www.youtube.com/watch?v=apBWkBDVlow">this video</a>.</h4>
+<h4 id="orgfe4bd02"><span class="todo TODO">TODO</span> perhaps show definition of Fibonacci sequence as in <a href="https://www.youtube.com/watch?v=apBWkBDVlow">this video</a>.</h4>
 <div class="org-src-container">
 
 <pre  class="fragment roll-in"><code trim><span style="color: #73d216;">-- </span><span style="color: #73d216;">an infinite list</span>
@@ -149,7 +149,7 @@ which becomes
 </section>
 <section>
 <section id="slide-sec-">
-<h2 id="orge2c22a8">Why Haskell is Cool</h2>
+<h2 id="orgcf6393d">Why Haskell is Cool</h2>
 <ul>
 <li>A new way to think about programming</li>
 <li>expressive, concise and clear</li>
