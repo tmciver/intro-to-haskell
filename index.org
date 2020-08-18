@@ -58,6 +58,18 @@ process = map toUpper . unlines . map reverse . sort . lines
 #+end_src
 #+end_block
 
+** Defining Our Own Functions
+Let's define some helper functions.
+#+begin_src haskell
+allUpper :: String -> String
+allUpper = map toUpper
+
+rev :: [String] -> [String]
+rev = map reverse
+
+process =  allUpper . unlines . rev . sort . lines
+#+end_src
+
 ** Haskell is Pure
 #+ATTR_REVEAL: :frag (roll-in)
 - This means that functions _always_ return the same output for a given set of inputs, and
