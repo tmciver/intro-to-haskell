@@ -15,7 +15,7 @@
 
 ** Something a Little More Familiar
    #+begin_src bash :results pp
-   cat quote.txt | sort | rev | tr '[:lower:]' '[:upper:]'
+   cat world.txt | sort | rev | tr '[:lower:]' '[:upper:]'
    #+end_src
 
    #+results:
@@ -23,7 +23,7 @@
 ** In Haskell
 #+ATTR_REVEAL: :frag roll-in
 #+begin_src haskell
-main = readFile "gump-quote.txt" >>= putStr . process
+main = readFile "world.txt" >>= putStr . process
 
 process s = (map toUpper (unlines (map reverse (sort (lines s)))))
 #+end_src
