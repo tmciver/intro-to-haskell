@@ -1,6 +1,6 @@
 #+TITLE: Introduction to Haskell
 #+REVEAL_THEME: night
-#+OPTIONS: toc:1, num:nil, f:t
+#+OPTIONS: toc:nil, num:nil, timestamp:nil
 #+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js@3.8.0
 
 * What is Haskell?
