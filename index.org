@@ -23,9 +23,9 @@
 ** In Haskell
 #+ATTR_REVEAL: :frag roll-in
 #+begin_src haskell
-main = readFile "world.txt" >>= putStr . process
+main = readFile "world.txt" >>= putStr . sortRevUpper
 
-process s = (map toUpper (unlines (map reverse (sort (lines s)))))
+sortRevUpper s = (map toUpper (unlines (map reverse (sort (lines s)))))
 #+end_src
 
 ** Function Composition
@@ -38,7 +38,7 @@ f (g x) = (f . g) x
 #+begin_block
 So
 #+begin_src haskell
-process s = (map toUpper (unlines (map reverse (sort (lines s)))))
+sortRevUpper s = (map toUpper (unlines (map reverse (sort (lines s)))))
 #+end_src
 #+end_block
 
@@ -46,7 +46,7 @@ process s = (map toUpper (unlines (map reverse (sort (lines s)))))
 #+begin_block
 becomes
 #+begin_src haskell
-process s = (map toUpper . unlines . map reverse . sort . lines) s
+sortRevUpper s = (map toUpper . unlines . map reverse . sort . lines) s
 #+end_src
 #+end_block
 
@@ -54,7 +54,7 @@ process s = (map toUpper . unlines . map reverse . sort . lines) s
 #+begin_block
 which becomes
 #+begin_src haskell
-process = map toUpper . unlines . map reverse . sort . lines
+sortRevUpper = map toUpper . unlines . map reverse . sort . lines
 #+end_src
 #+end_block
 
@@ -67,7 +67,7 @@ allUpper = map toUpper
 rev :: [String] -> [String]
 rev = map reverse
 
-process =  allUpper . unlines . rev . sort . lines
+sortRevUpper =  allUpper . unlines . rev . sort . lines
 #+end_src
 
 ** Haskell is Pure
