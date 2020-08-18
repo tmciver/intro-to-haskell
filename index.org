@@ -13,12 +13,27 @@
 - is used to build programs by composing functions
   - show how it's similar to unix pipes as in [[https://www.youtube.com/watch?v=b9FagOVqxmI][this video]].
 
-** Something a Little More Familiar
-   #+begin_src bash :results pp
-   cat world.txt | sort | rev | tr '[:lower:]' '[:upper:]'
-   #+end_src
+** First, Something Familiar
+#+begin_src shell
+$ cat world.txt
+I see trees of green
+Red roses too
+I see them bloom
+For me and for you
+And I think to myself
+What a wonderful world
+#+end_src
+#+begin_src bash :results pp
+$ cat world.txt | sort | rev | tr '[:lower:]' '[:upper:]'
+FLESYM OT KNIHT I DNA
+UOY ROF DNA EM ROF
+MOOLB MEHT EES I
+NEERG FO SEERT EES I
+OOT SESOR DER
+DLROW LUFREDNOW A TAHW
+#+end_src
 
-   #+results:
+#+results:
 
 ** In Haskell
 #+ATTR_REVEAL: :frag roll-in
