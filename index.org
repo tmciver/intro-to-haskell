@@ -25,7 +25,7 @@
 #+begin_src haskell
 main = readFile "quotes.txt" >>= print . process
 
-process str = (toUpper (unlines (map reverse (sort (lines str)))))
+process s = (toUpper (unlines (map reverse (sort (lines s)))))
 #+end_src
 
 ** Function Composition
@@ -38,7 +38,7 @@ Compose two functions using '.'
 #+begin_block
 So
 #+begin_src haskell
-process str = (toUpper (unlines (map reverse (sort (lines str)))))
+process s = (toUpper (unlines (map reverse (sort (lines s)))))
 #+end_src
 #+end_block
 
@@ -46,7 +46,15 @@ process str = (toUpper (unlines (map reverse (sort (lines str)))))
 #+begin_block
 becomes
 #+begin_src haskell
-process str = (toUpper . unlines . map reverse . sort . lines) str
+process s = (toUpper . unlines . map reverse . sort . lines) s
+#+end_src
+#+end_block
+
+#+ATTR_REVEAL: :frag roll-in
+#+begin_block
+which becomes
+#+begin_src haskell
+process = toUpper . unlines . map reverse . sort . lines
 #+end_src
 #+end_block
 
