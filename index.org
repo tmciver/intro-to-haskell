@@ -81,6 +81,25 @@ dropLines n  = unlines . drop n        . lines
 #+ATTR_REVEAL: :frag roll-in
 See a pattern here?
 
+** Let's Abstract It!
+#+BEGIN_SRC haskell
+forLines f = (unlines . f . lines)
+#+END_SRC
+
+#+ATTR_REVEAL: :frag roll-in
+#+BEGIN_BLOCK
+Then we can write the previous functions as
+#+BEGIN_SRC haskell
+sortTake3    = forLines (take 3 . sort)
+take3Sort    = forLines (sort . take 3)
+reverseLines = forLines reverse
+dropLines n  = forLines (drop n)
+#+END_SRC
+#+END_BLOCK
+
+#+ATTR_REVEAL: :frag roll-in
+~forLines~ is a higher-order function because it accepts a function as argument.
+
 ** Haskell is Pure
 #+ATTR_REVEAL: :frag (roll-in)
 - This means that functions _always_ return the same output for a given set of inputs, and

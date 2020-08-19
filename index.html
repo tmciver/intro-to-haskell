@@ -30,13 +30,13 @@
 </section>
 
 <section>
-<section id="slide-orgf472890">
-<h2 id="orgf472890">What is Haskell?</h2>
-<div class="outline-text-2" id="text-orgf472890">
+<section id="slide-org0ff8c72">
+<h2 id="org0ff8c72">What is Haskell?</h2>
+<div class="outline-text-2" id="text-org0ff8c72">
 </div>
 </section>
-<section id="slide-org416e0fd">
-<h3 id="org416e0fd">Haskell is a programming language that</h3>
+<section id="slide-org7e15ab7">
+<h3 id="org7e15ab7">Haskell is a programming language that</h3>
 <ul>
 <li class="fragment roll-in">is pure</li>
 <li class="fragment roll-in">is lazy</li>
@@ -51,8 +51,8 @@
 </ul>
 
 </section>
-<section id="slide-org7a5b286">
-<h3 id="org7a5b286">First, Something Familiar</h3>
+<section id="slide-org39f4778">
+<h3 id="org39f4778">First, Something Familiar</h3>
 <div class="org-src-container">
 
 <pre  class="src src-shell"><code trim>$ cat world.txt
@@ -74,8 +74,8 @@ I see them bloom
 </div>
 
 </section>
-<section id="slide-org676fd0f">
-<h3 id="org676fd0f">In Haskell</h3>
+<section id="slide-orgcb9423f">
+<h3 id="orgcb9423f">In Haskell</h3>
 <div class="org-src-container">
 
 <pre  class="fragment roll-in"><code trim><span style="color: #fce94f;">main</span> <span style="color: #fcaf3e;">=</span> readFile <span style="color: #e9b96e;">"world.txt"</span> <span style="color: #fcaf3e;">&gt;&gt;=</span> putStr <span style="color: #fcaf3e;">.</span> sortTake3
@@ -85,8 +85,8 @@ I see them bloom
 </div>
 
 </section>
-<section id="slide-orgfd186c1">
-<h3 id="orgfd186c1">Function Composition</h3>
+<section id="slide-org276c4a2">
+<h3 id="org276c4a2">Function Composition</h3>
 <p>
 Compose two functions using '.'
 </p>
@@ -131,8 +131,8 @@ which becomes
 </div>
 
 </section>
-<section id="slide-orga48aed2">
-<h3 id="orga48aed2">Some Other Functions</h3>
+<section id="slide-org36aa58d">
+<h3 id="org36aa58d">Some Other Functions</h3>
 <div class="org-src-container">
 
 <pre  class="src src-haskell"><code trim><span style="color: #fce94f;">take3Sort</span>    <span style="color: #fcaf3e;">=</span> unlines <span style="color: #fcaf3e;">.</span> sort <span style="color: #fcaf3e;">.</span> take 3 <span style="color: #fcaf3e;">.</span> lines
@@ -146,8 +146,36 @@ See a pattern here?
 </p>
 
 </section>
-<section id="slide-orgce18eaf">
-<h3 id="orgce18eaf">Haskell is Pure</h3>
+<section id="slide-org38789a3">
+<h3 id="org38789a3">Let's Abstract It!</h3>
+<div class="org-src-container">
+
+<pre  class="src src-haskell"><code trim><span style="color: #fce94f;">forLines</span> f <span style="color: #fcaf3e;">=</span> (unlines <span style="color: #fcaf3e;">.</span> f <span style="color: #fcaf3e;">.</span> lines)
+</code></pre>
+</div>
+
+<div class="fragment roll-in BLOCK">
+<p>
+Then we can write the previous functions as
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-haskell"><code trim><span style="color: #fce94f;">sortTake3</span>    <span style="color: #fcaf3e;">=</span> forLines (take 3 <span style="color: #fcaf3e;">.</span> sort)
+<span style="color: #fce94f;">take3Sort</span>    <span style="color: #fcaf3e;">=</span> forLines (sort <span style="color: #fcaf3e;">.</span> take 3)
+<span style="color: #fce94f;">reverseLines</span> <span style="color: #fcaf3e;">=</span> forLines reverse
+<span style="color: #fce94f;">dropLines</span> n  <span style="color: #fcaf3e;">=</span> forLines (drop n)
+</code></pre>
+</div>
+
+</div>
+
+<p class="fragment roll-in">
+<code>forLines</code> is a higher-order function because it accepts a function as argument.
+</p>
+
+</section>
+<section id="slide-org0f36798">
+<h3 id="org0f36798">Haskell is Pure</h3>
 <ul>
 <li class="fragment roll-in">This means that functions <span class="underline">always</span> return the same output for a given set of inputs, and</li>
 <li class="fragment roll-in">they have no side effects</li>
@@ -155,16 +183,16 @@ See a pattern here?
 </ul>
 
 </section>
-<section id="slide-org5f8cc43">
-<h3 id="org5f8cc43">Haskell is lazy</h3>
+<section id="slide-orge4ea316">
+<h3 id="orge4ea316">Haskell is lazy</h3>
 <ul>
 <li class="fragment roll-in">data is only created as it is needed</li>
 
 </ul>
 
 </section>
-<section id="slide-orgfe40d2c">
-<h4 id="orgfe40d2c"><span class="todo TODO">TODO</span> perhaps show definition of Fibonacci sequence as in <a href="https://www.youtube.com/watch?v=apBWkBDVlow">this video</a>.</h4>
+<section id="slide-org5640e86">
+<h4 id="org5640e86"><span class="todo TODO">TODO</span> perhaps show definition of Fibonacci sequence as in <a href="https://www.youtube.com/watch?v=apBWkBDVlow">this video</a>.</h4>
 <div class="org-src-container">
 
 <pre  class="fragment roll-in"><code trim><span style="color: #73d216;">-- </span><span style="color: #73d216;">an infinite list</span>
@@ -178,8 +206,8 @@ See a pattern here?
 </section>
 </section>
 <section>
-<section id="slide-orgcbeb045">
-<h2 id="orgcbeb045">Why Haskell is Cool</h2>
+<section id="slide-orgf2ecbcf">
+<h2 id="orgf2ecbcf">Why Haskell is Cool</h2>
 <ul>
 <li>A new way to think about programming</li>
 <li>expressive, concise and clear</li>
