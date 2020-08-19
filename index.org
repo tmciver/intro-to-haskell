@@ -65,7 +65,7 @@ sortTake3 s = (unlines . take 3 . sort . lines) s
 
 #+ATTR_REVEAL: :frag roll-in
 #+begin_block
-which becomes
+which can be written as
 #+begin_src haskell
 sortTake3 = unlines . take 3 . sort . lines
 #+end_src
