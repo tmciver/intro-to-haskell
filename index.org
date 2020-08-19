@@ -25,13 +25,10 @@ And I think to myself
 What a wonderful world
 #+end_src
 #+begin_src bash :results pp
-$ cat world.txt | sort | rev
-flesym ot kniht I dnA
-uoy rof dna em roF
-moolb meht ees I
-neerg fo seert ees I
-oot sesor deR
-dlrow lufrednow a tahW
+$ cat world.txt | sort | head -n 3
+And I think to myself
+For me and for you
+I see them bloom
 #+end_src
 
 #+results:
@@ -39,9 +36,9 @@ dlrow lufrednow a tahW
 ** In Haskell
 #+ATTR_REVEAL: :frag roll-in
 #+begin_src haskell
-main = readFile "world.txt" >>= putStr . sortReverse
+main = readFile "world.txt" >>= putStr . sortTake3
 
-sortReverse s = unlines (map reverse (sort (lines s)))
+sortTake3 s = unlines (take 3 (sort (lines s)))
 #+end_src
 
 ** Function Composition
@@ -54,7 +51,7 @@ f (g x) = (f . g) x
 #+begin_block
 So
 #+begin_src haskell
-sortReverse s = unlines (map reverse (sort (lines s)))
+sortTake3 s = unlines (take 3 (sort (lines s)))
 #+end_src
 #+end_block
 
@@ -62,7 +59,7 @@ sortReverse s = unlines (map reverse (sort (lines s)))
 #+begin_block
 becomes
 #+begin_src haskell
-sortReverse s = (unlines . map reverse . sort . lines) s
+sortTake3 s = (unlines . take 3 . sort . lines) s
 #+end_src
 #+end_block
 
@@ -70,18 +67,9 @@ sortReverse s = (unlines . map reverse . sort . lines) s
 #+begin_block
 which becomes
 #+begin_src haskell
-sortReverse = unlines . map reverse . sort . lines
+sortTake3 = unlines . take 3 . sort . lines
 #+end_src
 #+end_block
-
-** Defining Our Own Functions
-Let's define some helper functions.
-#+begin_src haskell
-rev :: [String] -> [String]
-rev strs = map reverse strs
-
-sortReverse = unlines . rev . sort . lines
-#+end_src
 
 ** Haskell is Pure
 #+ATTR_REVEAL: :frag (roll-in)

@@ -1,6 +1,5 @@
-import Data.Char (toUpper)
 import Data.List (sort)
 
-main = readFile "world.txt" >>= putStr . sortReverse
+main = readFile "world.txt" >>= putStr . sortTake3
 
-sortReverse s = unlines (map reverse (sort (lines s)))
+sortTake3 s = unlines (take 3 (sort (lines s)))
