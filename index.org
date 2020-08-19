@@ -1,7 +1,7 @@
 #+TITLE: Introduction to Haskell
 #+REVEAL_THEME: night
 #+OPTIONS: toc:nil, num:nil, timestamp:nil
-#+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js@4.0.2
+#+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js@3.8.0
 
 * What is Haskell?
 
@@ -105,9 +105,21 @@ dropLines n  = forLines (drop n)
 Let's define a function that indents a ~String~ by some number of spaces.
 #+BEGIN_SRC haskell
 indent :: Int -> String -> String
-indent n s = replicate ' ' n ++ s
+indent n s = replicate n ' ' ++ s
 #+END_SRC
 #+END_BLOCK
+
+#+ATTR_REVEAL: :frag roll-in
+#+BEGIN_BLOCK
+But we can't use it with ~forLines~ like this
+#+BEGIN_SRC haskell
+indentLines :: String -> String
+indentLines = forLines indent
+#+END_SRC
+#+END_BLOCK
+
+#+ATTR_REVEAL: :frag roll-in
+Why not?
 
 ** Haskell is Pure
 #+ATTR_REVEAL: :frag (roll-in)
