@@ -9,7 +9,8 @@
 #+ATTR_REVEAL: :frag (roll-in)
 - is pure
 - is lazy
-- has immutable data
+- is strongly typed
+- has immutable data structures
 - is used to build programs by composing functions
   - show how it's similar to unix pipes as in [[https://www.youtube.com/watch?v=b9FagOVqxmI][this video]].
 

@@ -31,16 +31,17 @@
 
 <section>
 <section id="slide-sec-">
-<h2 id="org3a56685">What is Haskell?</h2>
-<div class="outline-text-2" id="text-org3a56685">
+<h2 id="orgb7ff8b0">What is Haskell?</h2>
+<div class="outline-text-2" id="text-orgb7ff8b0">
 </div>
 </section>
 <section id="slide-sec-">
-<h3 id="org88830d7">Haskell is a programming language that</h3>
+<h3 id="org101188b">Haskell is a programming language that</h3>
 <ul>
 <li class="fragment roll-in">is pure</li>
 <li class="fragment roll-in">is lazy</li>
-<li class="fragment roll-in">has immutable data</li>
+<li class="fragment roll-in">is strongly typed</li>
+<li class="fragment roll-in">has immutable data structures</li>
 <li class="fragment roll-in">is used to build programs by composing functions
 <ul>
 <li>show how it's similar to unix pipes as in <a href="https://www.youtube.com/watch?v=b9FagOVqxmI">this video</a>.</li>
@@ -51,7 +52,7 @@
 
 </section>
 <section id="slide-sec-">
-<h3 id="org843287b">First, Something Familiar</h3>
+<h3 id="org97a47a0">First, Something Familiar</h3>
 <div class="org-src-container">
 
 <pre  class="src src-shell"><code trim>$ cat world.txt
@@ -77,7 +78,7 @@ dlrow lufrednow a tahW
 
 </section>
 <section id="slide-sec-">
-<h3 id="orgc83935b">In Haskell</h3>
+<h3 id="org001dc4f">In Haskell</h3>
 <div class="org-src-container">
 
 <pre  class="fragment roll-in"><code trim><span style="color: #fce94f;">main</span> <span style="color: #fcaf3e;">=</span> readFile <span style="color: #e9b96e;">"world.txt"</span> <span style="color: #fcaf3e;">&gt;&gt;=</span> putStr <span style="color: #fcaf3e;">.</span> sortReverse
@@ -88,7 +89,7 @@ dlrow lufrednow a tahW
 
 </section>
 <section id="slide-sec-">
-<h3 id="org6f7f338">Function Composition</h3>
+<h3 id="org040fc4f">Function Composition</h3>
 <p>
 Compose two functions using '.'
 </p>
@@ -134,7 +135,7 @@ which becomes
 
 </section>
 <section id="slide-sec-">
-<h3 id="orga94e95a">Defining Our Own Functions</h3>
+<h3 id="org1ee3a2d">Defining Our Own Functions</h3>
 <p>
 Let's define some helper functions.
 </p>
@@ -149,7 +150,7 @@ Let's define some helper functions.
 
 </section>
 <section id="slide-sec-">
-<h3 id="org2ceb6a5">Haskell is Pure</h3>
+<h3 id="orgfc06f34">Haskell is Pure</h3>
 <ul>
 <li class="fragment roll-in">This means that functions <span class="underline">always</span> return the same output for a given set of inputs, and</li>
 <li class="fragment roll-in">they have no side effects</li>
@@ -158,7 +159,7 @@ Let's define some helper functions.
 
 </section>
 <section id="slide-sec-">
-<h3 id="org79696eb">Haskell is lazy</h3>
+<h3 id="orgc4b5e83">Haskell is lazy</h3>
 <ul>
 <li class="fragment roll-in">data is only created as it is needed</li>
 
@@ -166,7 +167,7 @@ Let's define some helper functions.
 
 </section>
 <section id="slide-sec-">
-<h4 id="org22e9493"><span class="todo TODO">TODO</span> perhaps show definition of Fibonacci sequence as in <a href="https://www.youtube.com/watch?v=apBWkBDVlow">this video</a>.</h4>
+<h4 id="orgf76a33d"><span class="todo TODO">TODO</span> perhaps show definition of Fibonacci sequence as in <a href="https://www.youtube.com/watch?v=apBWkBDVlow">this video</a>.</h4>
 <div class="org-src-container">
 
 <pre  class="fragment roll-in"><code trim><span style="color: #73d216;">-- </span><span style="color: #73d216;">an infinite list</span>
@@ -181,7 +182,7 @@ Let's define some helper functions.
 </section>
 <section>
 <section id="slide-sec-">
-<h2 id="org58735b2">Why Haskell is Cool</h2>
+<h2 id="orga83e561">Why Haskell is Cool</h2>
 <ul>
 <li>A new way to think about programming</li>
 <li>expressive, concise and clear</li>
