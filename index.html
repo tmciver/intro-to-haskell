@@ -31,12 +31,12 @@
 
 <section>
 <section id="slide-sec-">
-<h2 id="orgf4e88cd">What is Haskell?</h2>
-<div class="outline-text-2" id="text-orgf4e88cd">
+<h2 id="org3a56685">What is Haskell?</h2>
+<div class="outline-text-2" id="text-org3a56685">
 </div>
 </section>
 <section id="slide-sec-">
-<h3 id="org2ee7ce3">Haskell is a programming language that</h3>
+<h3 id="org88830d7">Haskell is a programming language that</h3>
 <ul>
 <li class="fragment roll-in">is pure</li>
 <li class="fragment roll-in">is lazy</li>
@@ -51,7 +51,7 @@
 
 </section>
 <section id="slide-sec-">
-<h3 id="orga42f6b3">First, Something Familiar</h3>
+<h3 id="org843287b">First, Something Familiar</h3>
 <div class="org-src-container">
 
 <pre  class="src src-shell"><code trim>$ cat world.txt
@@ -65,30 +65,30 @@ What a wonderful world
 </div>
 <div class="org-src-container">
 
-<pre  class="src src-bash"><code trim>$ cat world.txt | sort | rev | tr <span style="color: #e9b96e;">'[:lower:]'</span> <span style="color: #e9b96e;">'[:upper:]'</span>
-FLESYM OT KNIHT I DNA
-UOY ROF DNA EM ROF
-MOOLB MEHT EES I
-NEERG FO SEERT EES I
-OOT SESOR DER
-DLROW LUFREDNOW A TAHW
+<pre  class="src src-bash"><code trim>$ cat world.txt | sort | rev
+flesym ot kniht I dnA
+uoy rof dna em roF
+moolb meht ees I
+neerg fo seert ees I
+oot sesor deR
+dlrow lufrednow a tahW
 </code></pre>
 </div>
 
 </section>
 <section id="slide-sec-">
-<h3 id="org7382480">In Haskell</h3>
+<h3 id="orgc83935b">In Haskell</h3>
 <div class="org-src-container">
 
-<pre  class="fragment roll-in"><code trim><span style="color: #fce94f;">main</span> <span style="color: #fcaf3e;">=</span> readFile <span style="color: #e9b96e;">"world.txt"</span> <span style="color: #fcaf3e;">&gt;&gt;=</span> putStr <span style="color: #fcaf3e;">.</span> sortRevUpper
+<pre  class="fragment roll-in"><code trim><span style="color: #fce94f;">main</span> <span style="color: #fcaf3e;">=</span> readFile <span style="color: #e9b96e;">"world.txt"</span> <span style="color: #fcaf3e;">&gt;&gt;=</span> putStr <span style="color: #fcaf3e;">.</span> sortReverse
 
-<span style="color: #fce94f;">sortRevUpper</span> s <span style="color: #fcaf3e;">=</span> (map toUpper (unlines (map reverse (sort (lines s)))))
+<span style="color: #fce94f;">sortReverse</span> s <span style="color: #fcaf3e;">=</span> unlines (map reverse (sort (lines s)))
 </code></pre>
 </div>
 
 </section>
 <section id="slide-sec-">
-<h3 id="org7cd5616">Function Composition</h3>
+<h3 id="org6f7f338">Function Composition</h3>
 <p>
 Compose two functions using '.'
 </p>
@@ -102,7 +102,7 @@ So
 </p>
 <div class="org-src-container">
 
-<pre  class="src src-haskell"><code trim><span style="color: #fce94f;">sortRevUpper</span> s <span style="color: #fcaf3e;">=</span> (map toUpper (unlines (map reverse (sort (lines s)))))
+<pre  class="src src-haskell"><code trim><span style="color: #fce94f;">sortReverse</span> s <span style="color: #fcaf3e;">=</span> unlines (map reverse (sort (lines s)))
 </code></pre>
 </div>
 
@@ -114,7 +114,7 @@ becomes
 </p>
 <div class="org-src-container">
 
-<pre  class="src src-haskell"><code trim><span style="color: #fce94f;">sortRevUpper</span> s <span style="color: #fcaf3e;">=</span> (map toUpper <span style="color: #fcaf3e;">.</span> unlines <span style="color: #fcaf3e;">.</span> map reverse <span style="color: #fcaf3e;">.</span> sort <span style="color: #fcaf3e;">.</span> lines) s
+<pre  class="src src-haskell"><code trim><span style="color: #fce94f;">sortReverse</span> s <span style="color: #fcaf3e;">=</span> (unlines <span style="color: #fcaf3e;">.</span> map reverse <span style="color: #fcaf3e;">.</span> sort <span style="color: #fcaf3e;">.</span> lines) s
 </code></pre>
 </div>
 
@@ -126,7 +126,7 @@ which becomes
 </p>
 <div class="org-src-container">
 
-<pre  class="src src-haskell"><code trim><span style="color: #fce94f;">sortRevUpper</span> <span style="color: #fcaf3e;">=</span> map toUpper <span style="color: #fcaf3e;">.</span> unlines <span style="color: #fcaf3e;">.</span> map reverse <span style="color: #fcaf3e;">.</span> sort <span style="color: #fcaf3e;">.</span> lines
+<pre  class="src src-haskell"><code trim><span style="color: #fce94f;">sortReverse</span> <span style="color: #fcaf3e;">=</span> unlines <span style="color: #fcaf3e;">.</span> map reverse <span style="color: #fcaf3e;">.</span> sort <span style="color: #fcaf3e;">.</span> lines
 </code></pre>
 </div>
 
@@ -134,25 +134,22 @@ which becomes
 
 </section>
 <section id="slide-sec-">
-<h3 id="org0bef70a">Defining Our Own Functions</h3>
+<h3 id="orga94e95a">Defining Our Own Functions</h3>
 <p>
 Let's define some helper functions.
 </p>
 <div class="org-src-container">
 
-<pre  class="src src-haskell"><code trim><span style="color: #fce94f;">allUpper</span> <span style="color: #fcaf3e;">::</span> <span style="color: #8cc4ff;">String</span> <span style="color: #fcaf3e;">-&gt;</span> <span style="color: #8cc4ff;">String</span>
-<span style="color: #fce94f;">allUpper</span> <span style="color: #fcaf3e;">=</span> map toUpper
+<pre  class="src src-haskell"><code trim><span style="color: #fce94f;">rev</span> <span style="color: #fcaf3e;">::</span> [<span style="color: #8cc4ff;">String</span>] <span style="color: #fcaf3e;">-&gt;</span> [<span style="color: #8cc4ff;">String</span>]
+<span style="color: #fce94f;">rev</span> strs <span style="color: #fcaf3e;">=</span> map reverse strs
 
-<span style="color: #fce94f;">rev</span> <span style="color: #fcaf3e;">::</span> [<span style="color: #8cc4ff;">String</span>] <span style="color: #fcaf3e;">-&gt;</span> [<span style="color: #8cc4ff;">String</span>]
-<span style="color: #fce94f;">rev</span> <span style="color: #fcaf3e;">=</span> map reverse
-
-<span style="color: #fce94f;">sortRevUpper</span> <span style="color: #fcaf3e;">=</span>  allUpper <span style="color: #fcaf3e;">.</span> unlines <span style="color: #fcaf3e;">.</span> rev <span style="color: #fcaf3e;">.</span> sort <span style="color: #fcaf3e;">.</span> lines
+<span style="color: #fce94f;">sortReverse</span> <span style="color: #fcaf3e;">=</span> unlines <span style="color: #fcaf3e;">.</span> rev <span style="color: #fcaf3e;">.</span> sort <span style="color: #fcaf3e;">.</span> lines
 </code></pre>
 </div>
 
 </section>
 <section id="slide-sec-">
-<h3 id="org39d8fc2">Haskell is Pure</h3>
+<h3 id="org2ceb6a5">Haskell is Pure</h3>
 <ul>
 <li class="fragment roll-in">This means that functions <span class="underline">always</span> return the same output for a given set of inputs, and</li>
 <li class="fragment roll-in">they have no side effects</li>
@@ -161,7 +158,7 @@ Let's define some helper functions.
 
 </section>
 <section id="slide-sec-">
-<h3 id="org1d7c43c">Haskell is lazy</h3>
+<h3 id="org79696eb">Haskell is lazy</h3>
 <ul>
 <li class="fragment roll-in">data is only created as it is needed</li>
 
@@ -169,7 +166,7 @@ Let's define some helper functions.
 
 </section>
 <section id="slide-sec-">
-<h4 id="org7d06fb9"><span class="todo TODO">TODO</span> perhaps show definition of Fibonacci sequence as in <a href="https://www.youtube.com/watch?v=apBWkBDVlow">this video</a>.</h4>
+<h4 id="org22e9493"><span class="todo TODO">TODO</span> perhaps show definition of Fibonacci sequence as in <a href="https://www.youtube.com/watch?v=apBWkBDVlow">this video</a>.</h4>
 <div class="org-src-container">
 
 <pre  class="fragment roll-in"><code trim><span style="color: #73d216;">-- </span><span style="color: #73d216;">an infinite list</span>
@@ -184,7 +181,7 @@ Let's define some helper functions.
 </section>
 <section>
 <section id="slide-sec-">
-<h2 id="org5d754ad">Why Haskell is Cool</h2>
+<h2 id="org58735b2">Why Haskell is Cool</h2>
 <ul>
 <li>A new way to think about programming</li>
 <li>expressive, concise and clear</li>

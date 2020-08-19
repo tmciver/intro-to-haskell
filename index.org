@@ -24,13 +24,13 @@ And I think to myself
 What a wonderful world
 #+end_src
 #+begin_src bash :results pp
-$ cat world.txt | sort | rev | tr '[:lower:]' '[:upper:]'
-FLESYM OT KNIHT I DNA
-UOY ROF DNA EM ROF
-MOOLB MEHT EES I
-NEERG FO SEERT EES I
-OOT SESOR DER
-DLROW LUFREDNOW A TAHW
+$ cat world.txt | sort | rev
+flesym ot kniht I dnA
+uoy rof dna em roF
+moolb meht ees I
+neerg fo seert ees I
+oot sesor deR
+dlrow lufrednow a tahW
 #+end_src
 
 #+results:
@@ -38,9 +38,9 @@ DLROW LUFREDNOW A TAHW
 ** In Haskell
 #+ATTR_REVEAL: :frag roll-in
 #+begin_src haskell
-main = readFile "world.txt" >>= putStr . sortRevUpper
+main = readFile "world.txt" >>= putStr . sortReverse
 
-sortRevUpper s = (map toUpper (unlines (map reverse (sort (lines s)))))
+sortReverse s = unlines (map reverse (sort (lines s)))
 #+end_src
 
 ** Function Composition
@@ -53,7 +53,7 @@ f (g x) = (f . g) x
 #+begin_block
 So
 #+begin_src haskell
-sortRevUpper s = (map toUpper (unlines (map reverse (sort (lines s)))))
+sortReverse s = unlines (map reverse (sort (lines s)))
 #+end_src
 #+end_block
 
@@ -61,7 +61,7 @@ sortRevUpper s = (map toUpper (unlines (map reverse (sort (lines s)))))
 #+begin_block
 becomes
 #+begin_src haskell
-sortRevUpper s = (map toUpper . unlines . map reverse . sort . lines) s
+sortReverse s = (unlines . map reverse . sort . lines) s
 #+end_src
 #+end_block
 
@@ -69,20 +69,17 @@ sortRevUpper s = (map toUpper . unlines . map reverse . sort . lines) s
 #+begin_block
 which becomes
 #+begin_src haskell
-sortRevUpper = map toUpper . unlines . map reverse . sort . lines
+sortReverse = unlines . map reverse . sort . lines
 #+end_src
 #+end_block
 
 ** Defining Our Own Functions
 Let's define some helper functions.
 #+begin_src haskell
-allUpper :: String -> String
-allUpper = map toUpper
-
 rev :: [String] -> [String]
-rev = map reverse
+rev strs = map reverse strs
 
-sortRevUpper =  allUpper . unlines . rev . sort . lines
+sortReverse = unlines . rev . sort . lines
 #+end_src
 
 ** Haskell is Pure

@@ -1,6 +1,6 @@
 import Data.Char (toUpper)
 import Data.List (sort)
 
-main = readFile "world.txt" >>= putStr . sortRevUpper
+main = readFile "world.txt" >>= putStr . sortReverse
 
-sortRevUpper s = (map toUpper (unlines (map reverse (sort (lines s)))))
+sortReverse s = unlines (map reverse (sort (lines s)))
