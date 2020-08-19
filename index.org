@@ -5,14 +5,13 @@
 
 * What is Haskell?
 
-** Haskell is a programming language that
+** Haskell is a programming language that is
 #+ATTR_REVEAL: :frag (roll-in)
-- is pure
-- is lazy
-- is strongly typed
-- has immutable data structures
-- is used to build programs by composing functions
-  - show how it's similar to unix pipes as in [[https://www.youtube.com/watch?v=b9FagOVqxmI][this video]].
+- pure
+- lazy
+- strongly typed
+- immutable
+- used to build programs by composing functions
 
 ** First, Something Familiar
 #+begin_src shell
@@ -99,6 +98,16 @@ dropLines n  = forLines (drop n)
 
 #+ATTR_REVEAL: :frag roll-in
 ~forLines~ is a higher-order function because it accepts a function as argument.
+
+** Defining Functions
+#+ATTR_REVEAL: :frag roll-in
+#+BEGIN_BLOCK
+Let's define a function that indents a ~String~ by some number of spaces.
+#+BEGIN_SRC haskell
+indent :: Int -> String -> String
+indent n s = replicate ' ' n ++ s
+#+END_SRC
+#+END_BLOCK
 
 ** Haskell is Pure
 #+ATTR_REVEAL: :frag (roll-in)

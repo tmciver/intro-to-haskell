@@ -30,29 +30,25 @@
 </section>
 
 <section>
-<section id="slide-orgfef1b2b">
-<h2 id="orgfef1b2b">What is Haskell?</h2>
-<div class="outline-text-2" id="text-orgfef1b2b">
+<section id="slide-org61fbae2">
+<h2 id="org61fbae2">What is Haskell?</h2>
+<div class="outline-text-2" id="text-org61fbae2">
 </div>
 </section>
-<section id="slide-orgb9910d9">
-<h3 id="orgb9910d9">Haskell is a programming language that</h3>
+<section id="slide-org7f6f5ef">
+<h3 id="org7f6f5ef">Haskell is a programming language that is</h3>
 <ul>
-<li class="fragment roll-in">is pure</li>
-<li class="fragment roll-in">is lazy</li>
-<li class="fragment roll-in">is strongly typed</li>
-<li class="fragment roll-in">has immutable data structures</li>
-<li class="fragment roll-in">is used to build programs by composing functions
-<ul>
-<li>show how it's similar to unix pipes as in <a href="https://www.youtube.com/watch?v=b9FagOVqxmI">this video</a>.</li>
-
-</ul></li>
+<li class="fragment roll-in">pure</li>
+<li class="fragment roll-in">lazy</li>
+<li class="fragment roll-in">strongly typed</li>
+<li class="fragment roll-in">immutable</li>
+<li class="fragment roll-in">used to build programs by composing functions</li>
 
 </ul>
 
 </section>
-<section id="slide-orgdde335c">
-<h3 id="orgdde335c">First, Something Familiar</h3>
+<section id="slide-org3ddf644">
+<h3 id="org3ddf644">First, Something Familiar</h3>
 <div class="org-src-container">
 
 <pre  class="src src-shell"><code trim>$ cat world.txt
@@ -74,8 +70,8 @@ I see them bloom
 </div>
 
 </section>
-<section id="slide-org3fb759a">
-<h3 id="org3fb759a">In Haskell</h3>
+<section id="slide-org6e234a2">
+<h3 id="org6e234a2">In Haskell</h3>
 <div class="org-src-container">
 
 <pre  class="fragment roll-in"><code trim><span style="color: #fce94f;">main</span> <span style="color: #fcaf3e;">=</span> readFile <span style="color: #e9b96e;">"world.txt"</span> <span style="color: #fcaf3e;">&gt;&gt;=</span> putStr <span style="color: #fcaf3e;">.</span> sortTake3
@@ -85,8 +81,8 @@ I see them bloom
 </div>
 
 </section>
-<section id="slide-org9814f64">
-<h3 id="org9814f64">Function Composition</h3>
+<section id="slide-org411e173">
+<h3 id="org411e173">Function Composition</h3>
 <p>
 Compose two functions using '.'
 </p>
@@ -131,8 +127,8 @@ which can be written as
 </div>
 
 </section>
-<section id="slide-org4836c11">
-<h3 id="org4836c11">Some Other Functions</h3>
+<section id="slide-org570ba98">
+<h3 id="org570ba98">Some Other Functions</h3>
 <div class="org-src-container">
 
 <pre  class="src src-haskell"><code trim><span style="color: #fce94f;">take3Sort</span>    <span style="color: #fcaf3e;">=</span> unlines <span style="color: #fcaf3e;">.</span> sort <span style="color: #fcaf3e;">.</span> take 3 <span style="color: #fcaf3e;">.</span> lines
@@ -146,8 +142,8 @@ See a pattern here?
 </p>
 
 </section>
-<section id="slide-org784b4a6">
-<h3 id="org784b4a6">Let's Abstract It!</h3>
+<section id="slide-orgd2771fb">
+<h3 id="orgd2771fb">Let's Abstract It!</h3>
 <div class="org-src-container">
 
 <pre  class="src src-haskell"><code trim><span style="color: #fce94f;">forLines</span> f <span style="color: #fcaf3e;">=</span> (unlines <span style="color: #fcaf3e;">.</span> f <span style="color: #fcaf3e;">.</span> lines)
@@ -174,8 +170,24 @@ Then we can write the previous functions as
 </p>
 
 </section>
-<section id="slide-org501b2e7">
-<h3 id="org501b2e7">Haskell is Pure</h3>
+<section id="slide-org349c966">
+<h3 id="org349c966">Defining Functions</h3>
+<div class="fragment roll-in BLOCK">
+<p>
+Let's define a function that indents a <code>String</code> by some number of spaces.
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-haskell"><code trim><span style="color: #fce94f;">indent</span> <span style="color: #fcaf3e;">::</span> <span style="color: #8cc4ff;">Int</span> <span style="color: #fcaf3e;">-&gt;</span> <span style="color: #8cc4ff;">String</span> <span style="color: #fcaf3e;">-&gt;</span> <span style="color: #8cc4ff;">String</span>
+<span style="color: #fce94f;">indent</span> n s <span style="color: #fcaf3e;">=</span> replicate <span style="color: #e9b96e;">' '</span> n <span style="color: #fcaf3e;">++</span> s
+</code></pre>
+</div>
+
+</div>
+
+</section>
+<section id="slide-org2b48aa1">
+<h3 id="org2b48aa1">Haskell is Pure</h3>
 <ul>
 <li class="fragment roll-in">This means that functions <span class="underline">always</span> return the same output for a given set of inputs, and</li>
 <li class="fragment roll-in">they have no side effects</li>
@@ -183,16 +195,16 @@ Then we can write the previous functions as
 </ul>
 
 </section>
-<section id="slide-org6618ddb">
-<h3 id="org6618ddb">Haskell is lazy</h3>
+<section id="slide-org70a24af">
+<h3 id="org70a24af">Haskell is lazy</h3>
 <ul>
 <li class="fragment roll-in">data is only created as it is needed</li>
 
 </ul>
 
 </section>
-<section id="slide-orga5f48ea">
-<h4 id="orga5f48ea"><span class="todo TODO">TODO</span> perhaps show definition of Fibonacci sequence as in <a href="https://www.youtube.com/watch?v=apBWkBDVlow">this video</a>.</h4>
+<section id="slide-org42e1817">
+<h4 id="org42e1817"><span class="todo TODO">TODO</span> perhaps show definition of Fibonacci sequence as in <a href="https://www.youtube.com/watch?v=apBWkBDVlow">this video</a>.</h4>
 <div class="org-src-container">
 
 <pre  class="fragment roll-in"><code trim><span style="color: #73d216;">-- </span><span style="color: #73d216;">an infinite list</span>
@@ -206,8 +218,8 @@ Then we can write the previous functions as
 </section>
 </section>
 <section>
-<section id="slide-orgc7930b7">
-<h2 id="orgc7930b7">Why Haskell is Cool</h2>
+<section id="slide-org71be8d8">
+<h2 id="org71be8d8">Why Haskell is Cool</h2>
 <ul>
 <li>A new way to think about programming</li>
 <li>expressive, concise and clear</li>
