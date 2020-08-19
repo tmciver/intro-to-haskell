@@ -7,9 +7,9 @@
 <style type="text/css">
 .underline { text-decoration: underline; }
 </style>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.8.0/css/reveal.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.0.2/dist/reveal.css"/>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.8.0/css/theme/night.css" id="theme"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.0.2/dist/theme/night.css" id="theme"/>
 
 
 <!-- If the query includes 'print-pdf', include the PDF print sheet -->
@@ -18,7 +18,7 @@
         var link = document.createElement( 'link' );
         link.rel = 'stylesheet';
         link.type = 'text/css';
-        link.href = 'https://cdn.jsdelivr.net/npm/reveal.js@3.8.0/css/print/pdf.css';
+        link.href = 'https://cdn.jsdelivr.net/npm/reveal.js@4.0.2/css/print/pdf.css';
         document.getElementsByTagName( 'head' )[0].appendChild( link );
     }
 </script>
@@ -30,13 +30,13 @@
 </section>
 
 <section>
-<section id="slide-sec-">
-<h2 id="orgb7ff8b0">What is Haskell?</h2>
-<div class="outline-text-2" id="text-orgb7ff8b0">
+<section id="slide-orga7d100f">
+<h2 id="orga7d100f">What is Haskell?</h2>
+<div class="outline-text-2" id="text-orga7d100f">
 </div>
 </section>
-<section id="slide-sec-">
-<h3 id="org101188b">Haskell is a programming language that</h3>
+<section id="slide-org1b3a9cc">
+<h3 id="org1b3a9cc">Haskell is a programming language that</h3>
 <ul>
 <li class="fragment roll-in">is pure</li>
 <li class="fragment roll-in">is lazy</li>
@@ -51,8 +51,8 @@
 </ul>
 
 </section>
-<section id="slide-sec-">
-<h3 id="org97a47a0">First, Something Familiar</h3>
+<section id="slide-org0e8181d">
+<h3 id="org0e8181d">First, Something Familiar</h3>
 <div class="org-src-container">
 
 <pre  class="src src-shell"><code trim>$ cat world.txt
@@ -77,8 +77,8 @@ dlrow lufrednow a tahW
 </div>
 
 </section>
-<section id="slide-sec-">
-<h3 id="org001dc4f">In Haskell</h3>
+<section id="slide-org39764d3">
+<h3 id="org39764d3">In Haskell</h3>
 <div class="org-src-container">
 
 <pre  class="fragment roll-in"><code trim><span style="color: #fce94f;">main</span> <span style="color: #fcaf3e;">=</span> readFile <span style="color: #e9b96e;">"world.txt"</span> <span style="color: #fcaf3e;">&gt;&gt;=</span> putStr <span style="color: #fcaf3e;">.</span> sortReverse
@@ -88,8 +88,8 @@ dlrow lufrednow a tahW
 </div>
 
 </section>
-<section id="slide-sec-">
-<h3 id="org040fc4f">Function Composition</h3>
+<section id="slide-orgfd3ce5a">
+<h3 id="orgfd3ce5a">Function Composition</h3>
 <p>
 Compose two functions using '.'
 </p>
@@ -134,8 +134,8 @@ which becomes
 </div>
 
 </section>
-<section id="slide-sec-">
-<h3 id="org1ee3a2d">Defining Our Own Functions</h3>
+<section id="slide-orgb54d504">
+<h3 id="orgb54d504">Defining Our Own Functions</h3>
 <p>
 Let's define some helper functions.
 </p>
@@ -149,8 +149,8 @@ Let's define some helper functions.
 </div>
 
 </section>
-<section id="slide-sec-">
-<h3 id="orgfc06f34">Haskell is Pure</h3>
+<section id="slide-org4f6d8e8">
+<h3 id="org4f6d8e8">Haskell is Pure</h3>
 <ul>
 <li class="fragment roll-in">This means that functions <span class="underline">always</span> return the same output for a given set of inputs, and</li>
 <li class="fragment roll-in">they have no side effects</li>
@@ -158,16 +158,16 @@ Let's define some helper functions.
 </ul>
 
 </section>
-<section id="slide-sec-">
-<h3 id="orgc4b5e83">Haskell is lazy</h3>
+<section id="slide-orgefa7820">
+<h3 id="orgefa7820">Haskell is lazy</h3>
 <ul>
 <li class="fragment roll-in">data is only created as it is needed</li>
 
 </ul>
 
 </section>
-<section id="slide-sec-">
-<h4 id="orgf76a33d"><span class="todo TODO">TODO</span> perhaps show definition of Fibonacci sequence as in <a href="https://www.youtube.com/watch?v=apBWkBDVlow">this video</a>.</h4>
+<section id="slide-org6ad096a">
+<h4 id="org6ad096a"><span class="todo TODO">TODO</span> perhaps show definition of Fibonacci sequence as in <a href="https://www.youtube.com/watch?v=apBWkBDVlow">this video</a>.</h4>
 <div class="org-src-container">
 
 <pre  class="fragment roll-in"><code trim><span style="color: #73d216;">-- </span><span style="color: #73d216;">an infinite list</span>
@@ -181,8 +181,8 @@ Let's define some helper functions.
 </section>
 </section>
 <section>
-<section id="slide-sec-">
-<h2 id="orga83e561">Why Haskell is Cool</h2>
+<section id="slide-org8f893e2">
+<h2 id="org8f893e2">Why Haskell is Cool</h2>
 <ul>
 <li>A new way to think about programming</li>
 <li>expressive, concise and clear</li>
@@ -193,25 +193,12 @@ Let's define some helper functions.
 </section>
 </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/reveal.js@3.8.0/js/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.0.2/dist/reveal.js"></script>
 
 <script>
 // Full list of configuration options available here:
 // https://github.com/hakimel/reveal.js#configuration
 Reveal.initialize({
-
-controls: true,
-progress: true,
-history: false,
-center: true,
-slideNumber: 'c',
-rollingLinks: false,
-keyboard: true,
-overview: true,
-
-theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
-transitionSpeed: 'default',
 multiplex: {
     secret: '', // null if client
     id: '', // id, obtained from socket.io server
@@ -220,11 +207,11 @@ multiplex: {
 
 // Optional libraries used to extend on reveal.js
 dependencies: [
- { src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.8.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
- { src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.8.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
- { src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.8.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
- { src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.8.0/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
- { src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.8.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js@4.0.2/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js@4.0.2/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js@4.0.2/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js@4.0.2/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js@4.0.2/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
 });
 </script>
 </body>
