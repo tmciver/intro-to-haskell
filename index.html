@@ -30,13 +30,13 @@
 </section>
 
 <section>
-<section id="slide-org24611fc">
-<h2 id="org24611fc">What is Haskell?</h2>
-<div class="outline-text-2" id="text-org24611fc">
+<section id="slide-orgf472890">
+<h2 id="orgf472890">What is Haskell?</h2>
+<div class="outline-text-2" id="text-orgf472890">
 </div>
 </section>
-<section id="slide-org73e152b">
-<h3 id="org73e152b">Haskell is a programming language that</h3>
+<section id="slide-org416e0fd">
+<h3 id="org416e0fd">Haskell is a programming language that</h3>
 <ul>
 <li class="fragment roll-in">is pure</li>
 <li class="fragment roll-in">is lazy</li>
@@ -51,8 +51,8 @@
 </ul>
 
 </section>
-<section id="slide-org64de66c">
-<h3 id="org64de66c">First, Something Familiar</h3>
+<section id="slide-org7a5b286">
+<h3 id="org7a5b286">First, Something Familiar</h3>
 <div class="org-src-container">
 
 <pre  class="src src-shell"><code trim>$ cat world.txt
@@ -74,8 +74,8 @@ I see them bloom
 </div>
 
 </section>
-<section id="slide-org912b82e">
-<h3 id="org912b82e">In Haskell</h3>
+<section id="slide-org676fd0f">
+<h3 id="org676fd0f">In Haskell</h3>
 <div class="org-src-container">
 
 <pre  class="fragment roll-in"><code trim><span style="color: #fce94f;">main</span> <span style="color: #fcaf3e;">=</span> readFile <span style="color: #e9b96e;">"world.txt"</span> <span style="color: #fcaf3e;">&gt;&gt;=</span> putStr <span style="color: #fcaf3e;">.</span> sortTake3
@@ -85,8 +85,8 @@ I see them bloom
 </div>
 
 </section>
-<section id="slide-orgc275ba9">
-<h3 id="orgc275ba9">Function Composition</h3>
+<section id="slide-orgfd186c1">
+<h3 id="orgfd186c1">Function Composition</h3>
 <p>
 Compose two functions using '.'
 </p>
@@ -131,8 +131,23 @@ which becomes
 </div>
 
 </section>
-<section id="slide-orgdce6276">
-<h3 id="orgdce6276">Haskell is Pure</h3>
+<section id="slide-orga48aed2">
+<h3 id="orga48aed2">Some Other Functions</h3>
+<div class="org-src-container">
+
+<pre  class="src src-haskell"><code trim><span style="color: #fce94f;">take3Sort</span>    <span style="color: #fcaf3e;">=</span> unlines <span style="color: #fcaf3e;">.</span> sort <span style="color: #fcaf3e;">.</span> take 3 <span style="color: #fcaf3e;">.</span> lines
+<span style="color: #fce94f;">reverseLines</span> <span style="color: #fcaf3e;">=</span> unlines <span style="color: #fcaf3e;">.</span> reverse       <span style="color: #fcaf3e;">.</span> lines
+<span style="color: #fce94f;">dropLines</span> n  <span style="color: #fcaf3e;">=</span> unlines <span style="color: #fcaf3e;">.</span> drop n        <span style="color: #fcaf3e;">.</span> lines
+</code></pre>
+</div>
+
+<p class="fragment roll-in">
+See a pattern here?
+</p>
+
+</section>
+<section id="slide-orgce18eaf">
+<h3 id="orgce18eaf">Haskell is Pure</h3>
 <ul>
 <li class="fragment roll-in">This means that functions <span class="underline">always</span> return the same output for a given set of inputs, and</li>
 <li class="fragment roll-in">they have no side effects</li>
@@ -140,16 +155,16 @@ which becomes
 </ul>
 
 </section>
-<section id="slide-org2f305be">
-<h3 id="org2f305be">Haskell is lazy</h3>
+<section id="slide-org5f8cc43">
+<h3 id="org5f8cc43">Haskell is lazy</h3>
 <ul>
 <li class="fragment roll-in">data is only created as it is needed</li>
 
 </ul>
 
 </section>
-<section id="slide-org9a1f52e">
-<h4 id="org9a1f52e"><span class="todo TODO">TODO</span> perhaps show definition of Fibonacci sequence as in <a href="https://www.youtube.com/watch?v=apBWkBDVlow">this video</a>.</h4>
+<section id="slide-orgfe40d2c">
+<h4 id="orgfe40d2c"><span class="todo TODO">TODO</span> perhaps show definition of Fibonacci sequence as in <a href="https://www.youtube.com/watch?v=apBWkBDVlow">this video</a>.</h4>
 <div class="org-src-container">
 
 <pre  class="fragment roll-in"><code trim><span style="color: #73d216;">-- </span><span style="color: #73d216;">an infinite list</span>
@@ -163,8 +178,8 @@ which becomes
 </section>
 </section>
 <section>
-<section id="slide-org7da54db">
-<h2 id="org7da54db">Why Haskell is Cool</h2>
+<section id="slide-orgcbeb045">
+<h2 id="orgcbeb045">Why Haskell is Cool</h2>
 <ul>
 <li>A new way to think about programming</li>
 <li>expressive, concise and clear</li>

@@ -71,6 +71,16 @@ sortTake3 = unlines . take 3 . sort . lines
 #+end_src
 #+end_block
 
+** Some Other Functions
+#+BEGIN_SRC haskell
+take3Sort    = unlines . sort . take 3 . lines
+reverseLines = unlines . reverse       . lines
+dropLines n  = unlines . drop n        . lines
+#+END_SRC
+
+#+ATTR_REVEAL: :frag roll-in
+See a pattern here?
+
 ** Haskell is Pure
 #+ATTR_REVEAL: :frag (roll-in)
 - This means that functions _always_ return the same output for a given set of inputs, and
