@@ -40,7 +40,7 @@ main = readFile "world.txt" >>= putStr . sortTake3
 sortTake3 s = unlines (take 3 (sort (lines s)))
 #+end_src
 
-** Function Composition
+* Function Composition
 Compose two functions using '.'
 #+begin_src
 f (g x) = (f . g) x
@@ -80,7 +80,10 @@ dropLines n  = unlines . drop n        . lines
 #+ATTR_REVEAL: :frag roll-in
 See a pattern here?
 
-** Let's Abstract It!
+#+ATTR_REVEAL: :frag roll-in
+Let's Abstract It!
+
+* Higher Order Functions
 #+BEGIN_SRC haskell
 forLines f = unlines . f . lines
 #+END_SRC
@@ -128,7 +131,7 @@ forEachLine :: (String -> String) -> String -> String
 forEachLine f = unlines . map f . lines
 #+end_src
 
-** Haskell Lists
+* Haskell Lists
 #+ATTR_REVEAL: :frag roll-in
 #+begin_src haskell
 ints = [2, 3, 4]
@@ -155,7 +158,7 @@ foldl (++) "" strs -- "how you doin?"
 #+ATTR_REVEAL: :frag roll-in
 And much more!
 
-** Haskell Lists (continued)
+** Infinite Lists
 You can create infinite lists
 #+begin_src haskell
 xs = [1..] -- [1, 2, 3, 4, ...]
@@ -172,12 +175,20 @@ You can operate on them normally
 #+ATTR_REVEAL: :frag roll-in
 (Just don't try to consume it all!)
 
-** Haskell Lists (continued)
+#+ATTR_REVEAL: :frag roll-in
+You can make any recursive data structure infinite (e.g. trees)
+
+** Accessing List Elements
 You can
 #+begin_src haskell
-strs !! 1 -- "you" (get an element)
+--  get the head of a list
+head strs -- "how"
 
-head strs -- "how" (get the head of the list)
+-- get the "rest" of a list
+tail strs -- ["you ", "doin?"]
+
+--  get an element
+strs !! 1 -- "you"
 #+end_src
 
 #+ATTR_REVEAL: :frag roll-in
