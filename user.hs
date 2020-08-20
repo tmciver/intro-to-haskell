@@ -13,3 +13,7 @@ businessLogic :: User -> Either String Bool
 businessLogic (User _ age) = if (age > 75)
                              then (Left "Too old to do this")
                              else (Right True)
+
+andThen :: Either a b -> (b -> Either a c) -> Either a c
+andThen (Left e)  _ = Left e
+andThen (Right v) f = f v

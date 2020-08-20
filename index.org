@@ -320,6 +320,17 @@ businessLogic (User _ age) = if (age > 75)
 #+end_src
 #+END_BLOCK
 
+#+ATTR_REVEAL: :frag roll-in
+Now what?
+
+** 
+Write a function to help
+#+BEGIN_SRC haskell
+andThen :: Either a b -> (b -> Either a c) -> Either a c
+andThen (Left e)  _ = Left e
+andThen (Right v) f = f v
+#+END_SRC
+
 ** Haskell is Pure
 #+ATTR_REVEAL: :frag (roll-in)
 - This means that functions _always_ return the same output for a given set of inputs, and
