@@ -284,6 +284,31 @@ fmap toLower (calculationThatMightFail 1) -- Right 'a'
 #+end_src
 #+END_BLOCK
 
+* Custom Data Types
+
+** 
+Let's define some types for part of an application.
+#+ATTR_REVEAL: :frag roll-in
+#+BEGIN_BLOCK
+A simple user type
+#+begin_src haskell
+data User = User { name :: String
+                 , age :: Int
+                 }
+#+end_src
+#+END_BLOCK
+
+** 
+But we want to make sure a user is created properly
+#+BEGIN_SRC haskell
+makeUser :: String -> Int -> Either String User
+makeUser name age = if (age < 18)
+                    then (Left "Not old enough")
+                    else if (length name < 3)
+                         then (Left "Name too short")
+                         else Right (User name age)
+#+END_SRC
+
 ** Haskell is Pure
 #+ATTR_REVEAL: :frag (roll-in)
 - This means that functions _always_ return the same output for a given set of inputs, and
