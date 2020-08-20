@@ -128,6 +128,65 @@ forEachLine :: (String -> String) -> String -> String
 forEachLine f = unlines . map f . lines
 #+end_src
 
+** Haskell Lists
+#+ATTR_REVEAL: :frag roll-in
+#+begin_src haskell
+ints = [2, 3, 4]
+strs = ["how ", "you ", "doin?"]
+#+end_src
+
+#+ATTR_REVEAL: :frag roll-in
+#+BEGIN_BLOCK
+You can
+#+BEGIN_SRC haskell
+-- map over them
+map (+1) ints -- [3, 4, 5]
+
+-- reverse them
+reverse ints -- [4, 3, 2]
+
+-- fold them
+foldl (+) 0 ints -- 9
+foldl (*) 1 ints -- 24
+foldl (++) "" strs -- "how you doin?"
+#+END_SRC
+#+END_BLOCK
+
+#+ATTR_REVEAL: :frag roll-in
+And much more!
+
+** Haskell Lists (continued)
+You can create infinite lists
+#+begin_src haskell
+xs = [1..] -- [1, 2, 3, 4, ...]
+#+end_src
+
+#+ATTR_REVEAL: :frag roll-in
+#+BEGIN_BLOCK
+You can operate on them normally
+#+begin_src haskell
+(take 3 . drop 2) xs -- [3, 4, 5]
+#+end_src
+#+END_BLOCK
+
+#+ATTR_REVEAL: :frag roll-in
+(Just don't try to consume it all!)
+
+** Haskell Lists (continued)
+You can
+#+begin_src haskell
+strs !! 1 -- "you" (get an element)
+
+head strs -- "how" (get the head of the list)
+#+end_src
+
+#+ATTR_REVEAL: :frag roll-in
+But what happens if you try to get the head of an empty list?
+#+ATTR_REVEAL: :frag roll-in
+#+begin_src haskell
+head [] -- boom! exception
+#+end_src
+
 ** Haskell is Pure
 #+ATTR_REVEAL: :frag (roll-in)
 - This means that functions _always_ return the same output for a given set of inputs, and
