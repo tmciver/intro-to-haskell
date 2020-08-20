@@ -309,6 +309,17 @@ makeUser name age = if (age < 18)
                          else Right (User name age)
 #+END_SRC
 
+#+ATTR_REVEAL: :frag roll-in
+#+BEGIN_BLOCK
+And here's some important business logic
+#+begin_src haskell
+businessLogic :: User -> Either String Bool
+businessLogic (User _ age) = if (age > 75)
+                             then (Left "Too old to do this")
+                             else (Right True)
+#+end_src
+#+END_BLOCK
+
 ** Haskell is Pure
 #+ATTR_REVEAL: :frag (roll-in)
 - This means that functions _always_ return the same output for a given set of inputs, and
