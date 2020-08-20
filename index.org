@@ -82,7 +82,7 @@ See a pattern here?
 
 ** Let's Abstract It!
 #+BEGIN_SRC haskell
-forLines f = (unlines . f . lines)
+forLines f = unlines . f . lines
 #+END_SRC
 
 #+ATTR_REVEAL: :frag roll-in
