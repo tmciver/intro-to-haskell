@@ -30,13 +30,13 @@
 </section>
 
 <section>
-<section id="slide-orgf3ac17e">
-<h2 id="orgf3ac17e">What is Haskell?</h2>
-<div class="outline-text-2" id="text-orgf3ac17e">
+<section id="slide-org7ab36ee">
+<h2 id="org7ab36ee">What is Haskell?</h2>
+<div class="outline-text-2" id="text-org7ab36ee">
 </div>
 </section>
-<section id="slide-org787019a">
-<h3 id="org787019a">Haskell is a programming language that is</h3>
+<section id="slide-org24f6f55">
+<h3 id="org24f6f55">Haskell is a programming language that is</h3>
 <ul>
 <li class="fragment roll-in">pure</li>
 <li class="fragment roll-in">lazy</li>
@@ -47,8 +47,8 @@
 </ul>
 
 </section>
-<section id="slide-org4d9df41">
-<h3 id="org4d9df41">First, Something Familiar</h3>
+<section id="slide-org7fce3d2">
+<h3 id="org7fce3d2">First, Something Familiar</h3>
 <div class="org-src-container">
 
 <pre  class="src src-shell"><code trim>$ cat world.txt
@@ -70,8 +70,8 @@ I see them bloom
 </div>
 
 </section>
-<section id="slide-org3098280">
-<h3 id="org3098280">In Haskell</h3>
+<section id="slide-org5b17a35">
+<h3 id="org5b17a35">In Haskell</h3>
 <div class="org-src-container">
 
 <pre  class="fragment roll-in"><code trim><span style="color: #fce94f;">main</span> <span style="color: #fcaf3e;">=</span> readFile <span style="color: #e9b96e;">"world.txt"</span> <span style="color: #fcaf3e;">&gt;&gt;=</span> putStr <span style="color: #fcaf3e;">.</span> sortTake3
@@ -83,13 +83,13 @@ I see them bloom
 </section>
 </section>
 <section>
-<section id="slide-org75dbe87">
-<h2 id="org75dbe87">Function Composition</h2>
-<div class="outline-text-2" id="text-org75dbe87">
+<section id="slide-org676ef09">
+<h2 id="org676ef09">Function Composition</h2>
+<div class="outline-text-2" id="text-org676ef09">
 </div>
 </section>
-<section id="slide-org806e527">
-<h3 id="org806e527"></h3>
+<section id="slide-org499a062">
+<h3 id="org499a062"></h3>
 <p>
 Compose two functions using '.'
 </p>
@@ -134,8 +134,8 @@ which can be written as
 </div>
 
 </section>
-<section id="slide-org3191550">
-<h3 id="org3191550">Some Other Functions</h3>
+<section id="slide-org48675e1">
+<h3 id="org48675e1">Some Other Functions</h3>
 <div class="org-src-container">
 
 <pre  class="src src-haskell"><code trim><span style="color: #fce94f;">take3Sort</span>    <span style="color: #fcaf3e;">=</span> unlines <span style="color: #fcaf3e;">.</span> sort <span style="color: #fcaf3e;">.</span> take 3 <span style="color: #fcaf3e;">.</span> lines
@@ -152,13 +152,13 @@ See a pattern here?
 </section>
 </section>
 <section>
-<section id="slide-org8f0b556">
-<h2 id="org8f0b556">Higher Order Functions</h2>
-<div class="outline-text-2" id="text-org8f0b556">
+<section id="slide-org3b2cc24">
+<h2 id="org3b2cc24">Higher Order Functions</h2>
+<div class="outline-text-2" id="text-org3b2cc24">
 </div>
 </section>
-<section id="slide-org857d1ac">
-<h3 id="org857d1ac"></h3>
+<section id="slide-org240b935">
+<h3 id="org240b935"></h3>
 <p>
 Let's abstract the pattern.
 </p>
@@ -189,8 +189,8 @@ Then we can write the previous functions as
 </p>
 
 </section>
-<section id="slide-orgd857680">
-<h3 id="orgd857680">Defining Functions</h3>
+<section id="slide-orgedd6734">
+<h3 id="orgedd6734">Defining Functions</h3>
 <div class="fragment roll-in BLOCK">
 <p>
 Let's define a function that indents a <code>String</code> by some number of spaces.
@@ -222,8 +222,8 @@ Why not?
 </p>
 
 </section>
-<section id="slide-org05db0ad">
-<h3 id="org05db0ad"></h3>
+<section id="slide-orgc43502b">
+<h3 id="orgc43502b"></h3>
 <p>
 Let's fix it.  Create another higher-order function that operates on each line.
 </p>
@@ -237,13 +237,13 @@ Let's fix it.  Create another higher-order function that operates on each line.
 </section>
 </section>
 <section>
-<section id="slide-org186aa14">
-<h2 id="org186aa14">Haskell Lists</h2>
-<div class="outline-text-2" id="text-org186aa14">
+<section id="slide-orgc849367">
+<h2 id="orgc849367">Haskell Lists</h2>
+<div class="outline-text-2" id="text-orgc849367">
 </div>
 </section>
-<section id="slide-org9cafac0">
-<h3 id="org9cafac0"></h3>
+<section id="slide-org5bb1d14">
+<h3 id="org5bb1d14"></h3>
 <p>
 You can create lists
 </p>
@@ -280,8 +280,8 @@ And much more!
 </p>
 
 </section>
-<section id="slide-org98e3d1d">
-<h3 id="org98e3d1d">Infinite Lists</h3>
+<section id="slide-orge6ee5d2">
+<h3 id="orge6ee5d2">Infinite Lists</h3>
 <p>
 You can create infinite lists
 </p>
@@ -312,8 +312,8 @@ You can make any recursive data structure infinite (e.g. trees)
 </p>
 
 </section>
-<section id="slide-org04139b7">
-<h3 id="org04139b7">Accessing List Elements</h3>
+<section id="slide-org3cb3fd9">
+<h3 id="org3cb3fd9">Accessing List Elements</h3>
 <p>
 You can
 </p>
@@ -342,13 +342,13 @@ But what happens if you try to get the head of an empty list?
 </section>
 </section>
 <section>
-<section id="slide-org45828bf">
-<h2 id="org45828bf">Functions Revisited: Partial/Total Functions</h2>
-<div class="outline-text-2" id="text-org45828bf">
+<section id="slide-org7f032e2">
+<h2 id="org7f032e2">Functions Revisited: Partial/Total Functions</h2>
+<div class="outline-text-2" id="text-org7f032e2">
 </div>
 </section>
-<section id="slide-orgf45dec8">
-<h3 id="orgf45dec8"></h3>
+<section id="slide-orge8bf560">
+<h3 id="orge8bf560"></h3>
 <p>
 <code>head</code> is known as a <span class="underline">partial</span> function: it does not return a value for all inputs.
 </p>
@@ -364,13 +364,13 @@ It's a best practice to use total functions when possible.
 </section>
 </section>
 <section>
-<section id="slide-orgcdad0e5">
-<h2 id="orgcdad0e5">Maybe</h2>
-<div class="outline-text-2" id="text-orgcdad0e5">
+<section id="slide-orgddc0566">
+<h2 id="orgddc0566">Maybe</h2>
+<div class="outline-text-2" id="text-orgddc0566">
 </div>
 </section>
-<section id="slide-org83804aa">
-<h3 id="org83804aa"></h3>
+<section id="slide-orga576b5f">
+<h3 id="orga576b5f"></h3>
 <p>
 <code>Maybe</code> is Haskell's answer to the null problem.
 </p>
@@ -417,8 +417,8 @@ A version using <code>Maybe</code> would look something like
 </div>
 
 </section>
-<section id="slide-orgb7ec7ad">
-<h3 id="orgb7ec7ad">Either</h3>
+<section id="slide-org36eeced">
+<h3 id="org36eeced">Either</h3>
 <p>
 <code>Either</code> is a data type similar to <code>Maybe</code> but allows one to give more information about failure.
 </p>
@@ -447,8 +447,8 @@ You could use it like so
 </div>
 
 </section>
-<section id="slide-org5d45dbb">
-<h3 id="org5d45dbb"></h3>
+<section id="slide-orgba2c660">
+<h3 id="orgba2c660"></h3>
 <p>
 But how do I <b>use</b> the value in <code>Maybe</code> / <code>Either</code>?
 </p>
@@ -469,13 +469,13 @@ Just as with lists you can map over them
 </section>
 </section>
 <section>
-<section id="slide-orgfdcff35">
-<h2 id="orgfdcff35">Custom Data Types</h2>
-<div class="outline-text-2" id="text-orgfdcff35">
+<section id="slide-org473d064">
+<h2 id="org473d064">Custom Data Types</h2>
+<div class="outline-text-2" id="text-org473d064">
 </div>
 </section>
-<section id="slide-org8af83d3">
-<h3 id="org8af83d3"></h3>
+<section id="slide-org087f45c">
+<h3 id="org087f45c"></h3>
 <p>
 Let's define some types for part of an application.
 </p>
@@ -494,8 +494,8 @@ A simple user type
 </div>
 
 </section>
-<section id="slide-org403a57e">
-<h3 id="org403a57e"></h3>
+<section id="slide-orga00d564">
+<h3 id="orga00d564"></h3>
 <p>
 But we want to make sure a user is created properly
 </p>
@@ -530,8 +530,8 @@ Now what?
 </p>
 
 </section>
-<section id="slide-org17e20cb">
-<h3 id="org17e20cb"></h3>
+<section id="slide-orgf509fba">
+<h3 id="orgf509fba"></h3>
 <p>
 Write a function to help
 </p>
@@ -543,47 +543,23 @@ Write a function to help
 </code></pre>
 </div>
 
-</section>
-<section id="slide-org4a45fcb">
-<h3 id="org4a45fcb">Haskell is Pure</h3>
-<ul>
-<li class="fragment roll-in">This means that functions <span class="underline">always</span> return the same output for a given set of inputs, and</li>
-<li class="fragment roll-in">they have no side effects</li>
-
-</ul>
-
-</section>
-<section id="slide-org60435a6">
-<h3 id="org60435a6">Haskell is lazy</h3>
-<ul>
-<li class="fragment roll-in">data is only created as it is needed</li>
-
-</ul>
-
-</section>
-<section id="slide-orga46dadc">
-<h4 id="orga46dadc"><span class="todo TODO">TODO</span> perhaps show definition of Fibonacci sequence as in <a href="https://www.youtube.com/watch?v=apBWkBDVlow">this video</a>.</h4>
+<div class="fragment roll-in BLOCK">
+<p>
+This is already defined in Haskell as the operator <code>&gt;&gt;=</code> and is calld "bind"
+</p>
 <div class="org-src-container">
 
-<pre  class="fragment roll-in"><code trim><span style="color: #73d216;">-- </span><span style="color: #73d216;">an infinite list</span>
-<span style="color: #fce94f;">xs</span> <span style="color: #fcaf3e;">=</span> [1<span style="color: #fcaf3e;">..</span>]
-
-<span style="color: #73d216;">-- </span><span style="color: #73d216;">take the first 10</span>
-<span style="color: #fce94f;">take</span> 10 xs
+<pre  class="src src-haskell"><code trim>(<span style="color: #fce94f;">&gt;&gt;=</span>) <span style="color: #fcaf3e;">::</span> m a <span style="color: #fcaf3e;">-&gt;</span> (a <span style="color: #fcaf3e;">-&gt;</span> m b) <span style="color: #fcaf3e;">-&gt;</span> m b
 </code></pre>
+</div>
+
 </div>
 
 </section>
 </section>
 <section>
-<section id="slide-org2d11393">
-<h2 id="org2d11393">Why Haskell is Cool</h2>
-<ul>
-<li>A new way to think about programming</li>
-<li>expressive, concise and clear</li>
-<li>beautiful</li>
-
-</ul>
+<section id="slide-org90559e3">
+<h2 id="org90559e3">Questions?</h2>
 </section>
 </section>
 </div>

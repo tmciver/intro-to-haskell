@@ -331,30 +331,12 @@ andThen (Left e)  _ = Left e
 andThen (Right v) f = f v
 #+END_SRC
 
-** Haskell is Pure
-#+ATTR_REVEAL: :frag (roll-in)
-- This means that functions _always_ return the same output for a given set of inputs, and
-- they have no side effects
-
-** Haskell is lazy
-#+ATTR_REVEAL: :frag (roll-in)
-- data is only created as it is needed
-
-*** TODO perhaps show definition of Fibonacci sequence as in [[https://www.youtube.com/watch?v=apBWkBDVlow][this video]].
-
 #+ATTR_REVEAL: :frag roll-in
-#+begin_src haskell :results pp
--- an infinite list
-xs = [1..]
-
--- take the first 10
-take 10 xs
+#+BEGIN_BLOCK
+This is already defined in Haskell as the operator ~>>=~ and is calld "bind"
+#+begin_src haskell
+(>>=) :: m a -> (a -> m b) -> m b
 #+end_src
+#+END_BLOCK
 
-#+results: 
-| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
-
-* Why Haskell is Cool
-- A new way to think about programming
-- expressive, concise and clear
-- beautiful
+* Questions?
