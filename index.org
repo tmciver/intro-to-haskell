@@ -272,6 +272,18 @@ calculationThatMightFail _ = Left "I don't like that number!"
 #+end_src
 #+END_BLOCK
 
+** 
+But how do I *use* the value in ~Maybe~ / ~Either~?
+
+#+ATTR_REVEAL: :frag roll-in
+#+BEGIN_BLOCK
+Just as with lists you can map over them
+#+begin_src haskell
+fmap toLower (calculationThatMightFail 0) -- Left "Zero not allowed!"
+fmap toLower (calculationThatMightFail 1) -- Right 'a'
+#+end_src
+#+END_BLOCK
+
 ** Haskell is Pure
 #+ATTR_REVEAL: :frag (roll-in)
 - This means that functions _always_ return the same output for a given set of inputs, and
