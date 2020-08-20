@@ -41,6 +41,8 @@ sortTake3 s = unlines (take 3 (sort (lines s)))
 #+end_src
 
 * Function Composition
+
+** 
 Compose two functions using '.'
 #+begin_src
 f (g x) = (f . g) x
@@ -81,9 +83,13 @@ dropLines n  = unlines . drop n        . lines
 See a pattern here?
 
 #+ATTR_REVEAL: :frag roll-in
-Let's Abstract It!
+
 
 * Higher Order Functions
+
+** 
+Let's abstract the pattern.
+
 #+BEGIN_SRC haskell
 forLines f = unlines . f . lines
 #+END_SRC
@@ -132,7 +138,9 @@ forEachLine f = unlines . map f . lines
 #+end_src
 
 * Haskell Lists
-#+ATTR_REVEAL: :frag roll-in
+
+** 
+You can create lists
 #+begin_src haskell
 ints = [2, 3, 4]
 strs = ["how ", "you ", "doin?"]
@@ -140,7 +148,7 @@ strs = ["how ", "you ", "doin?"]
 
 #+ATTR_REVEAL: :frag roll-in
 #+BEGIN_BLOCK
-You can
+And you can
 #+BEGIN_SRC haskell
 -- map over them
 map (+1) ints -- [3, 4, 5]
@@ -201,7 +209,6 @@ head [] -- boom! exception
 * Functions Revisited: Partial/Total Functions
 
 ** 
-#+ATTR_REVEAL: :frag roll-in
 ~head~ is known as a _partial_ function: it does not return a value for all inputs.
 
 #+ATTR_REVEAL: :frag roll-in

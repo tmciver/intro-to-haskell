@@ -30,13 +30,13 @@
 </section>
 
 <section>
-<section id="slide-org80fbb3e">
-<h2 id="org80fbb3e">What is Haskell?</h2>
-<div class="outline-text-2" id="text-org80fbb3e">
+<section id="slide-orgff93174">
+<h2 id="orgff93174">What is Haskell?</h2>
+<div class="outline-text-2" id="text-orgff93174">
 </div>
 </section>
-<section id="slide-org767ab74">
-<h3 id="org767ab74">Haskell is a programming language that is</h3>
+<section id="slide-org434a705">
+<h3 id="org434a705">Haskell is a programming language that is</h3>
 <ul>
 <li class="fragment roll-in">pure</li>
 <li class="fragment roll-in">lazy</li>
@@ -47,8 +47,8 @@
 </ul>
 
 </section>
-<section id="slide-org2a4a285">
-<h3 id="org2a4a285">First, Something Familiar</h3>
+<section id="slide-orgdb8ac8b">
+<h3 id="orgdb8ac8b">First, Something Familiar</h3>
 <div class="org-src-container">
 
 <pre  class="src src-shell"><code trim>$ cat world.txt
@@ -70,8 +70,8 @@ I see them bloom
 </div>
 
 </section>
-<section id="slide-orge5576b3">
-<h3 id="orge5576b3">In Haskell</h3>
+<section id="slide-orge5e0848">
+<h3 id="orge5e0848">In Haskell</h3>
 <div class="org-src-container">
 
 <pre  class="fragment roll-in"><code trim><span style="color: #fce94f;">main</span> <span style="color: #fcaf3e;">=</span> readFile <span style="color: #e9b96e;">"world.txt"</span> <span style="color: #fcaf3e;">&gt;&gt;=</span> putStr <span style="color: #fcaf3e;">.</span> sortTake3
@@ -83,8 +83,13 @@ I see them bloom
 </section>
 </section>
 <section>
-<section id="slide-org6650a16">
-<h2 id="org6650a16">Function Composition</h2>
+<section id="slide-org930b0f3">
+<h2 id="org930b0f3">Function Composition</h2>
+<div class="outline-text-2" id="text-org930b0f3">
+</div>
+</section>
+<section id="slide-orgaa8c24a">
+<h3 id="orgaa8c24a"></h3>
 <p>
 Compose two functions using '.'
 </p>
@@ -129,8 +134,8 @@ which can be written as
 </div>
 
 </section>
-<section id="slide-org4ae7774">
-<h3 id="org4ae7774">Some Other Functions</h3>
+<section id="slide-org22fb208">
+<h3 id="org22fb208">Some Other Functions</h3>
 <div class="org-src-container">
 
 <pre  class="src src-haskell"><code trim><span style="color: #fce94f;">take3Sort</span>    <span style="color: #fcaf3e;">=</span> unlines <span style="color: #fcaf3e;">.</span> sort <span style="color: #fcaf3e;">.</span> take 3 <span style="color: #fcaf3e;">.</span> lines
@@ -143,15 +148,21 @@ which can be written as
 See a pattern here?
 </p>
 
-<p class="fragment roll-in">
-Let's Abstract It!
-</p>
 
 </section>
 </section>
 <section>
-<section id="slide-orgef705d8">
-<h2 id="orgef705d8">Higher Order Functions</h2>
+<section id="slide-orgb481a3f">
+<h2 id="orgb481a3f">Higher Order Functions</h2>
+<div class="outline-text-2" id="text-orgb481a3f">
+</div>
+</section>
+<section id="slide-org1f44537">
+<h3 id="org1f44537"></h3>
+<p>
+Let's abstract the pattern.
+</p>
+
 <div class="org-src-container">
 
 <pre  class="src src-haskell"><code trim><span style="color: #fce94f;">forLines</span> f <span style="color: #fcaf3e;">=</span> unlines <span style="color: #fcaf3e;">.</span> f <span style="color: #fcaf3e;">.</span> lines
@@ -178,8 +189,8 @@ Then we can write the previous functions as
 </p>
 
 </section>
-<section id="slide-org2a44b2d">
-<h3 id="org2a44b2d">Defining Functions</h3>
+<section id="slide-orge34d5af">
+<h3 id="orge34d5af">Defining Functions</h3>
 <div class="fragment roll-in BLOCK">
 <p>
 Let's define a function that indents a <code>String</code> by some number of spaces.
@@ -211,8 +222,8 @@ Why not?
 </p>
 
 </section>
-<section id="slide-org82d08d8">
-<h3 id="org82d08d8"></h3>
+<section id="slide-org110d83e">
+<h3 id="org110d83e"></h3>
 <p>
 Let's fix it.  Create another higher-order function that operates on each line.
 </p>
@@ -226,18 +237,26 @@ Let's fix it.  Create another higher-order function that operates on each line.
 </section>
 </section>
 <section>
-<section id="slide-org4ca8481">
-<h2 id="org4ca8481">Haskell Lists</h2>
+<section id="slide-orgbde4c3b">
+<h2 id="orgbde4c3b">Haskell Lists</h2>
+<div class="outline-text-2" id="text-orgbde4c3b">
+</div>
+</section>
+<section id="slide-org46d27f9">
+<h3 id="org46d27f9"></h3>
+<p>
+You can create lists
+</p>
 <div class="org-src-container">
 
-<pre  class="fragment roll-in"><code trim><span style="color: #fce94f;">ints</span> <span style="color: #fcaf3e;">=</span> [2, 3, 4]
+<pre  class="src src-haskell"><code trim><span style="color: #fce94f;">ints</span> <span style="color: #fcaf3e;">=</span> [2, 3, 4]
 <span style="color: #fce94f;">strs</span> <span style="color: #fcaf3e;">=</span> [<span style="color: #e9b96e;">"how "</span>, <span style="color: #e9b96e;">"you "</span>, <span style="color: #e9b96e;">"doin?"</span>]
 </code></pre>
 </div>
 
 <div class="fragment roll-in BLOCK">
 <p>
-You can
+And you can
 </p>
 <div class="org-src-container">
 
@@ -261,8 +280,8 @@ And much more!
 </p>
 
 </section>
-<section id="slide-org1ee1f7c">
-<h3 id="org1ee1f7c">Infinite Lists</h3>
+<section id="slide-org2fad4b6">
+<h3 id="org2fad4b6">Infinite Lists</h3>
 <p>
 You can create infinite lists
 </p>
@@ -293,8 +312,8 @@ You can make any recursive data structure infinite (e.g. trees)
 </p>
 
 </section>
-<section id="slide-orgea217d3">
-<h3 id="orgea217d3">Accessing List Elements</h3>
+<section id="slide-org0b89e7e">
+<h3 id="org0b89e7e">Accessing List Elements</h3>
 <p>
 You can
 </p>
@@ -323,14 +342,14 @@ But what happens if you try to get the head of an empty list?
 </section>
 </section>
 <section>
-<section id="slide-org7c320b6">
-<h2 id="org7c320b6">Functions Revisited: Partial/Total Functions</h2>
-<div class="outline-text-2" id="text-org7c320b6">
+<section id="slide-org0f53872">
+<h2 id="org0f53872">Functions Revisited: Partial/Total Functions</h2>
+<div class="outline-text-2" id="text-org0f53872">
 </div>
 </section>
-<section id="slide-org66ead95">
-<h3 id="org66ead95"></h3>
-<p class="fragment roll-in">
+<section id="slide-org1a6b72f">
+<h3 id="org1a6b72f"></h3>
+<p>
 <code>head</code> is known as a <span class="underline">partial</span> function: it does not return a value for all inputs.
 </p>
 
@@ -345,8 +364,8 @@ It's a best practice to use total functions when possible.
 </section>
 </section>
 <section>
-<section id="slide-orga6d1157">
-<h2 id="orga6d1157">Maybe</h2>
+<section id="slide-orgdc863ee">
+<h2 id="orgdc863ee">Maybe</h2>
 <div class="org-src-container">
 
 <pre  class="fragment roll-in"><code trim>
@@ -354,8 +373,8 @@ It's a best practice to use total functions when possible.
 </div>
 
 </section>
-<section id="slide-org3be5e92">
-<h3 id="org3be5e92">Haskell is Pure</h3>
+<section id="slide-orga84cfa5">
+<h3 id="orga84cfa5">Haskell is Pure</h3>
 <ul>
 <li class="fragment roll-in">This means that functions <span class="underline">always</span> return the same output for a given set of inputs, and</li>
 <li class="fragment roll-in">they have no side effects</li>
@@ -363,16 +382,16 @@ It's a best practice to use total functions when possible.
 </ul>
 
 </section>
-<section id="slide-org7bc8408">
-<h3 id="org7bc8408">Haskell is lazy</h3>
+<section id="slide-org54f85c3">
+<h3 id="org54f85c3">Haskell is lazy</h3>
 <ul>
 <li class="fragment roll-in">data is only created as it is needed</li>
 
 </ul>
 
 </section>
-<section id="slide-org64a1226">
-<h4 id="org64a1226"><span class="todo TODO">TODO</span> perhaps show definition of Fibonacci sequence as in <a href="https://www.youtube.com/watch?v=apBWkBDVlow">this video</a>.</h4>
+<section id="slide-org31bc66c">
+<h4 id="org31bc66c"><span class="todo TODO">TODO</span> perhaps show definition of Fibonacci sequence as in <a href="https://www.youtube.com/watch?v=apBWkBDVlow">this video</a>.</h4>
 <div class="org-src-container">
 
 <pre  class="fragment roll-in"><code trim><span style="color: #73d216;">-- </span><span style="color: #73d216;">an infinite list</span>
@@ -386,8 +405,8 @@ It's a best practice to use total functions when possible.
 </section>
 </section>
 <section>
-<section id="slide-orga7cff83">
-<h2 id="orga7cff83">Why Haskell is Cool</h2>
+<section id="slide-org5a6e7c3">
+<h2 id="org5a6e7c3">Why Haskell is Cool</h2>
 <ul>
 <li>A new way to think about programming</li>
 <li>expressive, concise and clear</li>
