@@ -252,6 +252,26 @@ head (x:_) = Just x
 #+end_src
 #+END_BLOCK
 
+** Either
+~Either~ is a data type similar to ~Maybe~ but allows one to give more information about failure.
+
+#+BEGIN_SRC haskell
+data Either a b = Left a
+                | Right b
+#+END_SRC
+
+#+ATTR_REVEAL: :frag roll-in
+#+BEGIN_BLOCK
+You could use it like so
+#+begin_src haskell
+calculationThatMightFail :: Int -> Either String Char
+calculationThatMightFail 0 = Left "Zero not allowed!"
+calculationThatMightFail 1 = Right 'A'
+calculationThatMightFail 2 = Right 'Q'
+calculationThatMightFail _ = Left "I don't like that number!"
+#+end_src
+#+END_BLOCK
+
 ** Haskell is Pure
 #+ATTR_REVEAL: :frag (roll-in)
 - This means that functions _always_ return the same output for a given set of inputs, and
