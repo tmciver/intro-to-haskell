@@ -7,9 +7,9 @@
 <style type="text/css">
 .underline { text-decoration: underline; }
 </style>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.8.0/css/reveal.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.0.2/dist/reveal.css"/>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3.8.0/css/theme/night.css" id="theme"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.0.2/dist/theme/night.css" id="theme"/>
 
 
 <!-- If the query includes 'print-pdf', include the PDF print sheet -->
@@ -18,7 +18,7 @@
         var link = document.createElement( 'link' );
         link.rel = 'stylesheet';
         link.type = 'text/css';
-        link.href = 'https://cdn.jsdelivr.net/npm/reveal.js@3.8.0/css/print/pdf.css';
+        link.href = 'https://cdn.jsdelivr.net/npm/reveal.js@4.0.2/css/print/pdf.css';
         document.getElementsByTagName( 'head' )[0].appendChild( link );
     }
 </script>
@@ -30,13 +30,13 @@
 </section>
 
 <section>
-<section id="slide-sec-">
-<h2 id="org5ba1837">What is Haskell?</h2>
-<div class="outline-text-2" id="text-org5ba1837">
+<section id="slide-org92d864e">
+<h2 id="org92d864e">What is Haskell?</h2>
+<div class="outline-text-2" id="text-org92d864e">
 </div>
 </section>
-<section id="slide-sec-">
-<h3 id="orgf42bfb4">Haskell is a programming language that is</h3>
+<section id="slide-orga74a42b">
+<h3 id="orga74a42b">Haskell is a programming language that is</h3>
 <ul>
 <li class="fragment roll-in">pure</li>
 <li class="fragment roll-in">lazy</li>
@@ -47,8 +47,8 @@
 </ul>
 
 </section>
-<section id="slide-sec-">
-<h3 id="org905d7b1">First, Something Familiar</h3>
+<section id="slide-orgbee7ca7">
+<h3 id="orgbee7ca7">First, Something Familiar</h3>
 <div class="org-src-container">
 
 <pre  class="src src-shell"><code trim>$ cat world.txt
@@ -70,8 +70,8 @@ I see them bloom
 </div>
 
 </section>
-<section id="slide-sec-">
-<h3 id="org0dfeaec">In Haskell</h3>
+<section id="slide-org64fa874">
+<h3 id="org64fa874">In Haskell</h3>
 <div class="org-src-container">
 
 <pre  class="fragment roll-in"><code trim><span style="color: #fce94f;">main</span> <span style="color: #fcaf3e;">=</span> readFile <span style="color: #e9b96e;">"world.txt"</span> <span style="color: #fcaf3e;">&gt;&gt;=</span> putStr <span style="color: #fcaf3e;">.</span> sortTake3
@@ -81,8 +81,8 @@ I see them bloom
 </div>
 
 </section>
-<section id="slide-sec-">
-<h3 id="org792670b">Function Composition</h3>
+<section id="slide-orged9f908">
+<h3 id="orged9f908">Function Composition</h3>
 <p>
 Compose two functions using '.'
 </p>
@@ -127,8 +127,8 @@ which can be written as
 </div>
 
 </section>
-<section id="slide-sec-">
-<h3 id="org9587fb1">Some Other Functions</h3>
+<section id="slide-orgc9f50aa">
+<h3 id="orgc9f50aa">Some Other Functions</h3>
 <div class="org-src-container">
 
 <pre  class="src src-haskell"><code trim><span style="color: #fce94f;">take3Sort</span>    <span style="color: #fcaf3e;">=</span> unlines <span style="color: #fcaf3e;">.</span> sort <span style="color: #fcaf3e;">.</span> take 3 <span style="color: #fcaf3e;">.</span> lines
@@ -142,8 +142,8 @@ See a pattern here?
 </p>
 
 </section>
-<section id="slide-sec-">
-<h3 id="org329de1d">Let's Abstract It!</h3>
+<section id="slide-org43d46c1">
+<h3 id="org43d46c1">Let's Abstract It!</h3>
 <div class="org-src-container">
 
 <pre  class="src src-haskell"><code trim><span style="color: #fce94f;">forLines</span> f <span style="color: #fcaf3e;">=</span> unlines <span style="color: #fcaf3e;">.</span> f <span style="color: #fcaf3e;">.</span> lines
@@ -170,8 +170,8 @@ Then we can write the previous functions as
 </p>
 
 </section>
-<section id="slide-sec-">
-<h3 id="org8f77b97">Defining Functions</h3>
+<section id="slide-org9a88966">
+<h3 id="org9a88966">Defining Functions</h3>
 <div class="fragment roll-in BLOCK">
 <p>
 Let's define a function that indents a <code>String</code> by some number of spaces.
@@ -203,8 +203,8 @@ Why not?
 </p>
 
 </section>
-<section id="slide-sec-">
-<h3 id="org426d212"></h3>
+<section id="slide-orgeb2d4fc">
+<h3 id="orgeb2d4fc"></h3>
 <p>
 Let's fix it.  Create another higher-order function that operates on each line.
 </p>
@@ -216,8 +216,8 @@ Let's fix it.  Create another higher-order function that operates on each line.
 </div>
 
 </section>
-<section id="slide-sec-">
-<h3 id="org34bb4c9">Haskell Lists</h3>
+<section id="slide-org177cd4e">
+<h3 id="org177cd4e">Haskell Lists</h3>
 <div class="org-src-container">
 
 <pre  class="fragment roll-in"><code trim><span style="color: #fce94f;">ints</span> <span style="color: #fcaf3e;">=</span> [2, 3, 4]
@@ -251,8 +251,8 @@ And much more!
 </p>
 
 </section>
-<section id="slide-sec-">
-<h3 id="orgb8d63d9">Haskell Lists (continued)</h3>
+<section id="slide-org3a36aef">
+<h3 id="org3a36aef">Haskell Lists (continued)</h3>
 <p>
 You can create infinite lists
 </p>
@@ -279,8 +279,8 @@ You can operate on them normally
 </p>
 
 </section>
-<section id="slide-sec-">
-<h3 id="orgeba23be">Haskell Lists (continued)</h3>
+<section id="slide-orgb25c3aa">
+<h3 id="orgb25c3aa">Haskell Lists (continued)</h3>
 <p>
 You can
 </p>
@@ -302,8 +302,8 @@ But what happens if you try to get the head of an empty list?
 </div>
 
 </section>
-<section id="slide-sec-">
-<h3 id="org9c4d257">Haskell is Pure</h3>
+<section id="slide-org9818e05">
+<h3 id="org9818e05">Haskell is Pure</h3>
 <ul>
 <li class="fragment roll-in">This means that functions <span class="underline">always</span> return the same output for a given set of inputs, and</li>
 <li class="fragment roll-in">they have no side effects</li>
@@ -311,16 +311,16 @@ But what happens if you try to get the head of an empty list?
 </ul>
 
 </section>
-<section id="slide-sec-">
-<h3 id="org0da1c85">Haskell is lazy</h3>
+<section id="slide-org999ef30">
+<h3 id="org999ef30">Haskell is lazy</h3>
 <ul>
 <li class="fragment roll-in">data is only created as it is needed</li>
 
 </ul>
 
 </section>
-<section id="slide-sec-">
-<h4 id="org79d2708"><span class="todo TODO">TODO</span> perhaps show definition of Fibonacci sequence as in <a href="https://www.youtube.com/watch?v=apBWkBDVlow">this video</a>.</h4>
+<section id="slide-org80a84e3">
+<h4 id="org80a84e3"><span class="todo TODO">TODO</span> perhaps show definition of Fibonacci sequence as in <a href="https://www.youtube.com/watch?v=apBWkBDVlow">this video</a>.</h4>
 <div class="org-src-container">
 
 <pre  class="fragment roll-in"><code trim><span style="color: #73d216;">-- </span><span style="color: #73d216;">an infinite list</span>
@@ -334,8 +334,8 @@ But what happens if you try to get the head of an empty list?
 </section>
 </section>
 <section>
-<section id="slide-sec-">
-<h2 id="orgad307bf">Why Haskell is Cool</h2>
+<section id="slide-org9a6057d">
+<h2 id="org9a6057d">Why Haskell is Cool</h2>
 <ul>
 <li>A new way to think about programming</li>
 <li>expressive, concise and clear</li>
@@ -346,25 +346,12 @@ But what happens if you try to get the head of an empty list?
 </section>
 </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/reveal.js@3.8.0/js/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.0.2/dist/reveal.js"></script>
 
 <script>
 // Full list of configuration options available here:
 // https://github.com/hakimel/reveal.js#configuration
 Reveal.initialize({
-
-controls: true,
-progress: true,
-history: false,
-center: true,
-slideNumber: 'c',
-rollingLinks: false,
-keyboard: true,
-overview: true,
-
-theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
-transitionSpeed: 'default',
 multiplex: {
     secret: '', // null if client
     id: '', // id, obtained from socket.io server
@@ -373,11 +360,11 @@ multiplex: {
 
 // Optional libraries used to extend on reveal.js
 dependencies: [
- { src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.8.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
- { src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.8.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
- { src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.8.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
- { src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.8.0/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
- { src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.8.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js@4.0.2/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js@4.0.2/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js@4.0.2/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js@4.0.2/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js@4.0.2/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
 });
 </script>
 </body>
