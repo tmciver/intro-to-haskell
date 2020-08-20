@@ -198,6 +198,24 @@ But what happens if you try to get the head of an empty list?
 head [] -- boom! exception
 #+end_src
 
+* Functions Revisited: Partial/Total Functions
+
+** 
+#+ATTR_REVEAL: :frag roll-in
+~head~ is known as a _partial_ function: it does not return a value for all inputs.
+
+#+ATTR_REVEAL: :frag roll-in
+Conversely, a _total_ function is one the does return a value for all combination of inputs.
+
+#+ATTR_REVEAL: :frag roll-in
+It's a best practice to use total functions when possible.
+
+* Maybe
+#+ATTR_REVEAL: :frag roll-in
+#+BEGIN_SRC haskell
+
+#+END_SRC
+
 ** Haskell is Pure
 #+ATTR_REVEAL: :frag (roll-in)
 - This means that functions _always_ return the same output for a given set of inputs, and
