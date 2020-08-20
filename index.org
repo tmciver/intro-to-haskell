@@ -218,10 +218,39 @@ Conversely, a _total_ function is one the does return a value for all combinatio
 It's a best practice to use total functions when possible.
 
 * Maybe
+
+** 
+~Maybe~ is Haskell's answer to the null problem.
+#+ATTR_REVEAL: :frag roll-in
+#+BEGIN_BLOCK
+(It's a [[https://en.wikipedia.org/wiki/Tony_Hoare#Apologies_and_retractions][billion dollar mistake]], you know.)
+#+END_BLOCK
+
 #+ATTR_REVEAL: :frag roll-in
 #+BEGIN_SRC haskell
-
+data Maybe a = Just a
+             | Nothing
 #+END_SRC
+
+#+ATTR_REVEAL: :frag roll-in
+#+BEGIN_BLOCK
+~head~ is defined something like
+#+begin_src haskell
+head :: [a] -> a
+head [] = error "empty list"
+head (x:_) = x
+#+end_src
+#+END_BLOCK
+
+#+ATTR_REVEAL: :frag roll-in
+#+BEGIN_BLOCK
+A version using ~Maybe~ would look something like
+#+begin_src haskell
+headMaybe :: [a] -> Maybe a
+head [] = Nothing
+head (x:_) = Just x
+#+end_src
+#+END_BLOCK
 
 ** Haskell is Pure
 #+ATTR_REVEAL: :frag (roll-in)
