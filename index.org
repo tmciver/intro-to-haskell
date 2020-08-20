@@ -121,6 +121,13 @@ indentLines = forLines indent
 #+ATTR_REVEAL: :frag roll-in
 Why not?
 
+** 
+Let's fix it.  Create another higher-order function that operates on each line.
+#+begin_src haskell
+forEachLine :: (String -> String) -> String -> String
+forEachLine f = unlines . map f . lines
+#+end_src
+
 ** Haskell is Pure
 #+ATTR_REVEAL: :frag (roll-in)
 - This means that functions _always_ return the same output for a given set of inputs, and
